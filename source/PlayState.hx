@@ -151,6 +151,12 @@ class PlayState extends MusicBeatState
 	var upperBoppers:FlxSprite;
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
+	
+	var bgspec:FlxSprite;
+	
+	var blackFuck:FlxSprite;
+	var startCircle:FlxSprite;
+	var startText:FlxSprite;
 
 	var fc:Bool = true;
 
@@ -459,6 +465,81 @@ class PlayState extends MusicBeatState
 					santa.antialiasing = true;
 					add(santa);
 			}
+		  case 'sonicStage':
+				{	
+				defaultCamZoom = 0.8;
+				curStage = 'SONICstage';
+
+
+
+				var sSKY:FlxSprite = new FlxSprite(-222, -16 + 150).loadGraphic(Paths.image('PolishedP1/SKY'));
+				sSKY.antialiasing = true;
+				sSKY.scrollFactor.set(1, 1);
+				sSKY.active = false;
+				add(sSKY);
+
+				var hills:FlxSprite = new FlxSprite(-264, -156 + 150).loadGraphic(Paths.image('PolishedP1/HILLS'));
+				hills.antialiasing = true;
+				hills.scrollFactor.set(1.1, 1);
+				hills.active = false;
+				add(hills);
+
+				var bg2:FlxSprite = new FlxSprite(-355, -289 + 150).loadGraphic(Paths.image('PolishedP1/FLOOR2'));
+				bg2.updateHitbox();
+				bg2.antialiasing = true;
+				bg2.scrollFactor.set(1.2, 1);
+				bg2.active = false;
+				add(bg2);
+
+				bgspec = new FlxSprite(-355, -289 + 120);
+				bgspec.updateHitbox();
+				bgspec.antialiasing = true;
+				bgspec.scrollFactor.set(1, 1);
+				bgspec.active = false;
+				
+
+
+				var bg:FlxSprite = new FlxSprite(-297, -246 + 150).loadGraphic(Paths.image('PolishedP1/FLOOR1'));
+				bg.antialiasing = true;
+				bg.scrollFactor.set(1.3, 1);
+				bg.active = false;
+				add(bg);
+
+				var eggman:FlxSprite = new FlxSprite(-218, -219 + 150).loadGraphic(Paths.image('PolishedP1/EGGMAN'));
+				eggman.updateHitbox();
+				eggman.antialiasing = true;     
+				eggman.scrollFactor.set(1.32, 1);
+				eggman.active = false;
+
+				add(eggman);
+
+				var tail:FlxSprite = new FlxSprite(-199 - 150, -259 + 150).loadGraphic(Paths.image('PolishedP1/TAIL'));
+				tail.updateHitbox();
+				tail.antialiasing = true;
+				tail.scrollFactor.set(1.34, 1);
+				tail.active = false;
+
+				add(tail);
+
+				var knuckle:FlxSprite = new FlxSprite(185 + 100, -350 + 150).loadGraphic(Paths.image('PolishedP1/KNUCKLE'));
+				knuckle.updateHitbox();
+				knuckle.antialiasing = true;
+				knuckle.scrollFactor.set(1.36, 1);
+				knuckle.active = false;
+
+				add(knuckle);
+				
+
+				var sticklol:FlxSprite = new FlxSprite(-200, -240).loadGraphic(Paths.image('PolishedP1/STICKLOL'));
+				sticklol.updateHitbox();
+				sticklol.antialiasing = true;
+				sticklol.scrollFactor.set(1.37, 1);
+				sticklol.active = false;
+
+				add(sticklol);
+
+
+				}
 			case 'winter-horrorland':
 			{
 					curStage = 'mallEvil';
@@ -690,6 +771,11 @@ class PlayState extends MusicBeatState
 				dad.x -= 150;
 				dad.y += 100;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'sonic':
+				dad.x -= 130;
+				dad.y += -50;
+			case 'poyo':
+			  dad.y += 350
 		}
 
 
