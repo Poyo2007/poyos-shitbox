@@ -465,7 +465,7 @@ class PlayState extends MusicBeatState
 					santa.antialiasing = true;
 					add(santa);
 			}
-		  case 'sonicStage':
+		  case 'left-unchecked':
 				{	
 				defaultCamZoom = 0.8;
 				curStage = 'SONICstage';
@@ -775,7 +775,7 @@ class PlayState extends MusicBeatState
 				dad.x -= 130;
 				dad.y += -50;
 			case 'poyo':
-			  dad.y += 350
+			  dad.y += 350;
 		}
 
 
