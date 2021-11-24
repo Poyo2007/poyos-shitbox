@@ -29,16 +29,16 @@ class MainMenuState extends MusicBeatState
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['story mode', 'freeplay', 'donate', 'options'];
+	var optionShit:Array<String> = ['freeplay', 'donate', 'options'];
 	#else
-	var optionShit:Array<String> = ['story mode', 'freeplay'];
+	var optionShit:Array<String> = ['freeplay'];
 	#end
 
 	var newGaming:FlxText;
 	var newGaming2:FlxText;
 	var newInput:Bool = true;
 
-	public static var nightly:String = "-Nightly2";
+	public static var nightly:String = "-Nightly";
 
 	public static var kadeEngineVer:String = "1.4.1" + nightly;
 	public static var gameVer:String = "0.2.7.1";

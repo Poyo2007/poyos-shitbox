@@ -198,13 +198,10 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
-	  if(SONG.song.toLowerCase() == 'left-unchecked')
-	  {
 	  blackFuck = new FlxSprite().makeGraphic(1280,720, FlxColor.BLACK);
 
 		startCircle = new FlxSprite();
 		startText = new FlxSprite();
-	  }
 
 		// PRELOADING STUFFS
 		if(SONG.song.toLowerCase() == 'left-unchecked')
@@ -985,6 +982,9 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
+		startCircle.cameras = [camHUD];
+		startText.cameras = [camHUD];
+		blackFuck.cameras = [camHUD];
 		if (FlxG.save.data.songPosition)
 		{
 			songPosBG.cameras = [camHUD];
@@ -1024,7 +1024,7 @@ class PlayState extends MusicBeatState
 		// cameras = [FlxG.cameras.list[1]];
 		startingSong = true;
 
-		if (isStoryMode)
+		if (!isStoryMode)
 		{
 			switch (curSong.toLowerCase())
 			{
@@ -1064,14 +1064,28 @@ class PlayState extends MusicBeatState
 				case 'thorns':
 					schoolIntro(doof);
 				case 'left-unchecked':
-					startCountdown();
 				add(blackFuck);
 				startCircle.loadGraphic(Paths.image('StartScreens/CircleTooSlow', 'shared'));
 				startCircle.x += 777;
 				add(startCircle);
 				startText.loadGraphic(Paths.image('StartScreens/TextTooSlow', 'shared'));
 				startText.x -= 1200;
-				add(startText);				
+				add(startText);
+				startCountdown();
+
+				new FlxTimer().start(0.6, function(tmr:FlxTimer)
+				{
+					FlxTween.tween(startCircle, {x: 0}, 0.5);
+					FlxTween.tween(startText, {x: 0}, 0.5);
+				});
+				
+				new FlxTimer().start(1.9, function(tmr:FlxTimer)
+				{
+					FlxTween.tween(startCircle, {alpha: 0}, 1);
+					FlxTween.tween(startText, {alpha: 0}, 1);
+					FlxTween.tween(blackFuck, {alpha: 0}, 1);
+				});
+
 				default:
 					startCountdown();
 			}
@@ -3327,12 +3341,12 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 		
-		if (dad.curCharacter == 'sonic' && SONG.song.toLowerCase() == 'left-unchecked')
+		if (SONG.song.toLowerCase() == 'left-unchecked')
 			{
 				switch (curStep)
 				{
-					case 1930:
-						doJumpscare;
+				  case 1930;
+					doJumpscare(1,1);
 				}
 			}
 
