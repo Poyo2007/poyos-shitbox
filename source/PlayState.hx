@@ -488,7 +488,7 @@ class PlayState extends MusicBeatState
 			}
 		  case 'left-unchecked':
 				{	
-				defaultCamZoom = 0.1;
+				defaultCamZoom = 1.0;
 				curStage = 'SONICstage';
 
 
