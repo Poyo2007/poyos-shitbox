@@ -3331,7 +3331,8 @@ class PlayState extends MusicBeatState
 		{
 			// dad.dance();
 		}
-		if (SONG.song.toLowercase)
+		
+		if (SONG.song.toLowercase() == 'left-unchecked')
 	  {
 	    case 1930:
 			doJumpscare(1,1);
