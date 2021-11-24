@@ -207,7 +207,7 @@ class PlayState extends MusicBeatState
 		if(SONG.song.toLowerCase() == 'left-unchecked')
 		{	
 			daJumpscare = new FlxSprite(0,0);
-			daJumpscare.frames = Paths.getSparrowAtlas('sonicJUMPSCARE');
+			daJumpscare.frames = Paths.getSparrowAtlas('jumpscare/sonicJUMPSCARE');
 			daJumpscare.animation.addByPrefix('jump','sonicSPOOK',24, false);
 			daJumpscare.animation.play('jump');
 			add(daJumpscare);
@@ -1111,7 +1111,7 @@ class PlayState extends MusicBeatState
 			
 			daJumpscare = new FlxSprite(0,0);
 	
-			daJumpscare.frames = Paths.getSparrowAtlas('sonicJUMPSCARE');
+			daJumpscare.frames = Paths.getSparrowAtlas('jumpscare/sonicJUMPSCARE');
 			daJumpscare.animation.addByPrefix('jump','sonicSPOOK',24, false);
 			
 			daJumpscare.screenCenter();
@@ -1130,8 +1130,8 @@ class PlayState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('jumpscare'), 0);
 				FlxG.sound.play(Paths.sound('datOneSound'), 0);
 				case 1:
-				FlxG.sound.play(Paths.sound('jumpscare'), 1);
-				FlxG.sound.play(Paths.sound('datOneSound'), 1);
+				FlxG.sound.play(Paths.sound('jumpscare'), 2);
+				FlxG.sound.play(Paths.sound('datOneSound'), 2);
 			}
 
 			switch(opa)
