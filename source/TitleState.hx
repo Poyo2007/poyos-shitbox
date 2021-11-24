@@ -186,11 +186,11 @@ class TitleState extends MusicBeatState
 		var daninnocentTxt:FlxText;
 
 daninnocentTxt = new FlxText(0, 0, 348);
-daninnocentTxt.text = "poyos shitbox";
+daninnocentTxt.text = "poyos playable covers :D";
 daninnocentTxt.setFormat(Paths.font("vcr.ttf"), 30, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 daninnocentTxt.scrollFactor.set();
 add(daninnocentTxt);
-daninnocentTxt.screencenter();
+daninnocentTxt.screenCenter();
 
 		titleText = new FlxSprite(100, FlxG.height * 0.8);
 		titleText.frames = Paths.getSparrowAtlas('titleEnter');
