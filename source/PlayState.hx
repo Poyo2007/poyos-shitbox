@@ -3327,11 +3327,11 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 		
-		if (SONG.song.toLowercase() == 'left-unchecked')
+		/*if (SONG.song.toLowercase() == 'left-unchecked')
 	  {
 	    case 1930:
 			doJumpscare(1,1);
-	  }
+	  }*/
 
 		if (dad.curCharacter == 'spooky' && curStep % 4 == 2)
 		{
