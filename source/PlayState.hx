@@ -198,7 +198,7 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
-	  if(SONG.song.toLowercase() == 'left-unchecked')
+	  if(SONG.song.toLowerCase() == 'left-unchecked')
 	  {
 	  blackFuck = new FlxSprite().makeGraphic(1280,720, FlxColor.BLACK);
 
@@ -3327,11 +3327,14 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 		
-		/*if (SONG.song.toLowercase() == 'left-unchecked')
-	  {
-	    case 1930:
-			doJumpscare(1,1);
-	  }*/
+		if (dad.curCharacter == 'sonic' && SONG.song.toLowerCase() == 'left-unchecked')
+			{
+				switch (curStep)
+				{
+					case 1930:
+						doJumpscare;
+				}
+			}
 
 		if (dad.curCharacter == 'spooky' && curStep % 4 == 2)
 		{
