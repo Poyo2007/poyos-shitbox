@@ -3345,7 +3345,7 @@ class PlayState extends MusicBeatState
 			{
 				switch (curStep)
 				{
-				  case 1930;
+				  case 1930:
 					doJumpscare(1,1);
 				}
 			}
