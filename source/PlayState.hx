@@ -3326,11 +3326,6 @@ class PlayState extends MusicBeatState
 		{
 			resyncVocals();
 		}
-
-		if (dad.curCharacter == 'spooky' && curStep % 4 == 2)
-		{
-			// dad.dance();
-		}
 		
 		if (SONG.song.toLowercase() == 'left-unchecked')
 	  {
@@ -3338,6 +3333,10 @@ class PlayState extends MusicBeatState
 			doJumpscare(1,1);
 	  }
 
+		if (dad.curCharacter == 'spooky' && curStep % 4 == 2)
+		{
+			// dad.dance();
+		}
 
 		// yes this updates every step.
 		// yes this is bad
