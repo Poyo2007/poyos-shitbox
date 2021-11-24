@@ -190,6 +190,7 @@ daninnocentTxt.text = "poyos shitbox";
 daninnocentTxt.setFormat(Paths.font("vcr.ttf"), 30, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 daninnocentTxt.scrollFactor.set();
 add(daninnocentTxt);
+daninnocentTxt.screencenter();
 
 		titleText = new FlxSprite(100, FlxG.height * 0.8);
 		titleText.frames = Paths.getSparrowAtlas('titleEnter');

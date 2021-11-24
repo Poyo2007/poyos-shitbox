@@ -130,6 +130,8 @@ class PlayState extends MusicBeatState
 	private var camGame:FlxCamera;
 
 	public static var offsetTesting:Bool = false;
+	
+	var daJumpscare:FlxSprite;
 
 
 	var notesHitArray:Array<Date> = [];
@@ -196,6 +198,25 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
+	  if(SONG.song.toLowercase() == 'left-unchecked')
+	  {
+	  blackFuck = new FlxSprite().makeGraphic(1280,720, FlxColor.BLACK);
+
+		startCircle = new FlxSprite();
+		startText = new FlxSprite();
+	  }
+
+		// PRELOADING STUFFS
+		if(SONG.song.toLowerCase() == 'left-unchecked')
+		{	
+			daJumpscare = new FlxSprite(0,0);
+			daJumpscare.frames = Paths.getSparrowAtlas('sonicJUMPSCARE');
+			daJumpscare.animation.addByPrefix('jump','sonicSPOOK',24, false);
+			daJumpscare.animation.play('jump');
+			add(daJumpscare);
+			
+			
+		}
 
 		if (FlxG.sound.music != null)
 			FlxG.sound.music.stop();
@@ -467,7 +488,7 @@ class PlayState extends MusicBeatState
 			}
 		  case 'left-unchecked':
 				{	
-				defaultCamZoom = 0.8;
+				defaultCamZoom = 0.1;
 				curStage = 'SONICstage';
 
 
@@ -794,6 +815,16 @@ class PlayState extends MusicBeatState
 
 			case 'mall':
 				boyfriend.x += 200;
+				
+			case 'SONICstage':
+				boyfriend.y += 25;
+				dad.y += 200;
+				dad.x += 200;
+				dad.scale.x = 1.1;
+				dad.scale.y = 1.1;
+				dad.scrollFactor.set(1.37, 1);
+				boyfriend.scrollFactor.set(1.37, 1);
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y - 100);
 
 			case 'mallEvil':
 				boyfriend.x += 320;
@@ -1032,6 +1063,15 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
+				case 'left-unchecked':
+					startCountdown();
+				add(blackFuck);
+				startCircle.loadGraphic(Paths.image('StartScreens/CircleTooSlow', 'shared'));
+				startCircle.x += 777;
+				add(startCircle);
+				startText.loadGraphic(Paths.image('StartScreens/TextTooSlow', 'shared'));
+				startText.x -= 1200;
+				add(startText);				
 				default:
 					startCountdown();
 			}
@@ -1050,6 +1090,55 @@ class PlayState extends MusicBeatState
 
 		super.create();
 	}
+	
+	function doJumpscare(sound:Int = 0, opa:Int = 0)
+		{
+			trace ('JUMPSCARE aaaa');
+			
+			daJumpscare = new FlxSprite(0,0);
+	
+			daJumpscare.frames = Paths.getSparrowAtlas('sonicJUMPSCARE');
+			daJumpscare.animation.addByPrefix('jump','sonicSPOOK',24, false);
+			
+			daJumpscare.screenCenter();
+
+			daJumpscare.scale.x = 1.1;
+			daJumpscare.scale.y = 1.1;
+
+			daJumpscare.y += 370;
+
+	
+			daJumpscare.cameras = [camHUD];
+
+			switch(sound)
+			{
+				case 0:
+				FlxG.sound.play(Paths.sound('jumpscare'), 0);
+				FlxG.sound.play(Paths.sound('datOneSound'), 0);
+				case 1:
+				FlxG.sound.play(Paths.sound('jumpscare'), 1);
+				FlxG.sound.play(Paths.sound('datOneSound'), 1);
+			}
+
+			switch(opa)
+			{
+				case 0:
+				daJumpscare.alpha = .001;
+				case 1:
+				daJumpscare.alpha = 1;
+			}
+
+	
+			add(daJumpscare);
+
+			daJumpscare.animation.play('jump');
+
+			daJumpscare.animation.finishCallback = function(pog:String)
+			{
+				trace('ended jump');
+				remove(daJumpscare);
+			}
+		}
 
 	function schoolIntro(?dialogueBox:DialogueBox):Void
 	{
@@ -3242,6 +3331,11 @@ class PlayState extends MusicBeatState
 		{
 			// dad.dance();
 		}
+		if (SONG.song.toLowercase)
+	  {
+	    case 1930:
+			doJumpscare(1,1);
+	  }
 
 
 		// yes this updates every step.
