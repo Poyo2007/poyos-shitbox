@@ -118,6 +118,27 @@ class CustomControls extends Option
 
 }
 
+class OptimizeOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.optimize = !FlxG.save.data.optimize;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.optimize ? "optimized sprites" : "unoptimized sprites";
+	}
+}
+
 class DownscrollOption extends Option
 {
 	public function new(desc:String)

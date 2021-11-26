@@ -21,7 +21,10 @@ class OptionsMenu extends MusicBeatState
 
 	var options:Array<OptionCatagory> = [
 		new OptionCatagory("Gameplay", [
+		  #if mobileC
 		    new CustomControls("Edit Mobile Controls."),
+		  #end
+		    new OptimizeOption("Makes the sprites low quality and removes the bg. Great for low quality pcs and phones."),
 			new DFJKOption(controls),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
 			#if !html

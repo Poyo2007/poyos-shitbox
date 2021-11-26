@@ -494,20 +494,29 @@ class PlayState extends MusicBeatState
 				sSKY.antialiasing = true;
 				sSKY.scrollFactor.set(2, 2);
 				sSKY.active = false;
+				if (!FlxG.save.data.optimize)
+				{
 				add(sSKY);
+				}
 
 				var hills:FlxSprite = new FlxSprite(-264, -156 + 150).loadGraphic(Paths.image('PolishedP1/HILLS'));
 				hills.antialiasing = true;
 				hills.scrollFactor.set(1.1, 1);
 				hills.active = false;
+				if (!FlxG.save.data.optimize)
+				{
 				add(hills);
+				}
 
 				var bg2:FlxSprite = new FlxSprite(-355, -289 + 150).loadGraphic(Paths.image('PolishedP1/FLOOR2'));
 				bg2.updateHitbox();
 				bg2.antialiasing = true;
 				bg2.scrollFactor.set(1.2, 1);
 				bg2.active = false;
+				if (!FlxG.save.data.optimize)
+				{
 				add(bg2);
+				}
 
 				bgspec = new FlxSprite(-355, -289 + 120);
 				bgspec.updateHitbox();
@@ -521,31 +530,41 @@ class PlayState extends MusicBeatState
 				bg.antialiasing = true;
 				bg.scrollFactor.set(1.3, 1);
 				bg.active = false;
+				if (!FlxG.save.data.optimize)
+				{
 				add(bg);
+				}
 
 				var eggman:FlxSprite = new FlxSprite(-218, -219 + 150).loadGraphic(Paths.image('PolishedP1/EGGMAN'));
 				eggman.updateHitbox();
 				eggman.antialiasing = true;     
 				eggman.scrollFactor.set(1.32, 1);
 				eggman.active = false;
-
+				
+				if (!FlxG.save.data.optimize)
+				{
 				add(eggman);
+				}
 
 				var tail:FlxSprite = new FlxSprite(-199 - 150, -259 + 150).loadGraphic(Paths.image('PolishedP1/TAIL'));
 				tail.updateHitbox();
 				tail.antialiasing = true;
 				tail.scrollFactor.set(1.34, 1);
 				tail.active = false;
-
+				if (!FlxG.save.data.optimize)
+				{
 				add(tail);
+				}
 
 				var knuckle:FlxSprite = new FlxSprite(185 + 100, -350 + 150).loadGraphic(Paths.image('PolishedP1/KNUCKLE'));
 				knuckle.updateHitbox();
 				knuckle.antialiasing = true;
 				knuckle.scrollFactor.set(1.36, 1);
 				knuckle.active = false;
-
+				if (!FlxG.save.data.optimize)
+				{
 				add(knuckle);
+				}
 				
 
 				var sticklol:FlxSprite = new FlxSprite(-200, -240).loadGraphic(Paths.image('PolishedP1/STICKLOL'));
@@ -553,13 +572,14 @@ class PlayState extends MusicBeatState
 				sticklol.antialiasing = true;
 				sticklol.scrollFactor.set(1.37, 1);
 				sticklol.active = false;
-
+				if (!FlxG.save.data.optimize)
+				{
 				add(sticklol);
+				}
 
 
 				}
 			case 'you-cant-run':
-			//COPY PASTE CAUSE YES
 				{
 				defaultCamZoom = 1.0;
 				curStage = 'SONICstagerun';
@@ -568,22 +588,31 @@ class PlayState extends MusicBeatState
 
 				var sSKY:FlxSprite = new FlxSprite(-222, -16 + 150).loadGraphic(Paths.image('PolishedP1/SKY'));
 				sSKY.antialiasing = true;
-				sSKY.scrollFactor.set(1, 1);
+				sSKY.scrollFactor.set(2, 2);
 				sSKY.active = false;
+				if (!FlxG.save.data.optimize)
+				{
 				add(sSKY);
+				}
 
 				var hills:FlxSprite = new FlxSprite(-264, -156 + 150).loadGraphic(Paths.image('PolishedP1/HILLS'));
 				hills.antialiasing = true;
 				hills.scrollFactor.set(1.1, 1);
 				hills.active = false;
+				if (!FlxG.save.data.optimize)
+				{
 				add(hills);
+				}
 
 				var bg2:FlxSprite = new FlxSprite(-355, -289 + 150).loadGraphic(Paths.image('PolishedP1/FLOOR2'));
 				bg2.updateHitbox();
 				bg2.antialiasing = true;
 				bg2.scrollFactor.set(1.2, 1);
 				bg2.active = false;
+				if (!FlxG.save.data.optimize)
+				{
 				add(bg2);
+				}
 
 				bgspec = new FlxSprite(-355, -289 + 120);
 				bgspec.updateHitbox();
@@ -597,31 +626,41 @@ class PlayState extends MusicBeatState
 				bg.antialiasing = true;
 				bg.scrollFactor.set(1.3, 1);
 				bg.active = false;
+				if (!FlxG.save.data.optimize)
+				{
 				add(bg);
+				}
 
 				var eggman:FlxSprite = new FlxSprite(-218, -219 + 150).loadGraphic(Paths.image('PolishedP1/EGGMAN'));
 				eggman.updateHitbox();
 				eggman.antialiasing = true;     
 				eggman.scrollFactor.set(1.32, 1);
 				eggman.active = false;
-
+				
+				if (!FlxG.save.data.optimize)
+				{
 				add(eggman);
+				}
 
 				var tail:FlxSprite = new FlxSprite(-199 - 150, -259 + 150).loadGraphic(Paths.image('PolishedP1/TAIL'));
 				tail.updateHitbox();
 				tail.antialiasing = true;
 				tail.scrollFactor.set(1.34, 1);
 				tail.active = false;
-
+				if (!FlxG.save.data.optimize)
+				{
 				add(tail);
+				}
 
 				var knuckle:FlxSprite = new FlxSprite(185 + 100, -350 + 150).loadGraphic(Paths.image('PolishedP1/KNUCKLE'));
 				knuckle.updateHitbox();
 				knuckle.antialiasing = true;
 				knuckle.scrollFactor.set(1.36, 1);
 				knuckle.active = false;
-
+				if (!FlxG.save.data.optimize)
+				{
 				add(knuckle);
+				}
 				
 
 				var sticklol:FlxSprite = new FlxSprite(-200, -240).loadGraphic(Paths.image('PolishedP1/STICKLOL'));
@@ -629,8 +668,10 @@ class PlayState extends MusicBeatState
 				sticklol.antialiasing = true;
 				sticklol.scrollFactor.set(1.37, 1);
 				sticklol.active = false;
-
+				if (!FlxG.save.data.optimize)
+				{
 				add(sticklol);
+				}
 
 
 				}
@@ -869,6 +910,20 @@ class PlayState extends MusicBeatState
 				dad.x -= 130;
 				dad.y += -50;
 			case 'poyo':
+			var robloxtxt:FlxText;
+			var wordWrap:Bool = false;
+      var autoSize:Bool = true
+			
+      robloxtxt = new FlxText;
+      robloxtxt.text = "drippy";
+      robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
+      robloxtxt.scrollFactor = dad.scrollFactor:
+      robloxtxt.y = dad.y + 80;
+      robloxtxt.x = dad.x;
+      
+      add(robloxtxt);
+      
+      robloxtxt.cameras = [camHUD];
 			  dad.y += 350;
 		}
 
