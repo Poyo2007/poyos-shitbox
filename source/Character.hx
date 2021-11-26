@@ -534,7 +534,7 @@ class Character extends FlxSprite
 				setGraphicSize(Std.int(width * 2));
 				}
 
-				playAnim('idle
+				playAnim('idle');
 				
 			case 'hd':
 			if (!FlxG.save.data.optimize)
