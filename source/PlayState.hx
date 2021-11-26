@@ -932,7 +932,7 @@ class PlayState extends MusicBeatState
 			case 'poyo':
 			var robloxtxt:FlxText;
 			var wordWrap:Bool = false;
-      var autoSize:Bool = true
+      var autoSize:Bool = true;
 			
       robloxtxt = new FlxText;
       robloxtxt.text = "drippy";
