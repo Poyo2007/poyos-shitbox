@@ -220,7 +220,7 @@ class PlayState extends MusicBeatState
 			daJumpscare.animation.play('jump');
 			if (FlxG.save.data.optimize)
 				{
-				setGraphicSize(Std.int(width * 6));
+				daJumpscare.setGraphicSize(Std.int(daJumpscare.width * 6));
 				}
 			add(daJumpscare);
 			
@@ -936,7 +936,6 @@ class PlayState extends MusicBeatState
       robloxtxt = new FlxText();
       robloxtxt.text = "drippy";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
-      robloxtxt.scrollFactor = dad.scrollFactor;
       robloxtxt.y = dad.y + 80;
       robloxtxt.x = dad.x;
       
@@ -945,8 +944,6 @@ class PlayState extends MusicBeatState
       robloxtxt.cameras = [camHUD];
 			  dad.y += 350;
 		}
-		
-		if (curC)
 
 
 		
@@ -1327,10 +1324,8 @@ class PlayState extends MusicBeatState
 			
 			if (FlxG.save.data.optimize)
 				{
-				daJumpscare.setGraphicSize(Std.int(width * 6));
+				daJumpscare.setGraphicSize(Std.int(daJumpscare.width * 6));
 				}
-
-	
 			add(daJumpscare);
 
 			daJumpscare.animation.play('jump');
