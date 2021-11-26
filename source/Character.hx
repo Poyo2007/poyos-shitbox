@@ -534,6 +534,70 @@ class Character extends FlxSprite
 				setGraphicSize(Std.int(width * 2));
 				}
 
+				playAnim('idle
+				
+			case 'hd':
+			if (!FlxG.save.data.optimize)
+			{
+				var tex = Paths.getSparrowAtlas('shitbox/144p','shared');
+				frames = tex;
+			}
+			else
+      {
+      var tex = Paths.getSparrowAtlas('opti_shitbox/144p','shared');
+      frames = tex;
+      }
+				
+				animation.addByPrefix('idle', 'Dad idle dance', 24, false);
+				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24, false);
+				animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24, false);
+				animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24, false);
+				animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24, false);
+
+				addOffset('idle', 0, 4);
+				addOffset("singUP", -6, 59);
+				addOffset("singRIGHT", 0, 32);
+				addOffset("singLEFT", -9, 15);
+				addOffset("singDOWN", 0, -24);
+				
+				if (FlxG.save.data.optimize)
+				{
+				
+				setGraphicSize(Std.int(width * 2));
+				}
+
+				playAnim('idle');
+				
+				case 'mrfunky':
+			if (!FlxG.save.data.optimize)
+			{
+				var tex = Paths.getSparrowAtlas('shitbox/nyan','shared');
+				frames = tex;
+			}
+			else
+      {
+      var tex = Paths.getSparrowAtlas('opti_shitbox/nyan','shared');
+      frames = tex;
+      }
+				
+				animation.addByPrefix('idle', 'Cat_Idle', 24, false);
+				animation.addByPrefix('singUP', 'Cat_Up', 24, false);
+				animation.addByPrefix('singLEFT', 'Cat_Left', 24, false);
+				animation.addByPrefix('singRIGHT', 'Cat_Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Cat_Down', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -86, 40);
+				addOffset("singRIGHT", -90, -53);
+				addOffset("singLEFT", -104, -30);
+				addOffset("singDOWN", 80, -40);
+				
+				if (FlxG.save.data.optimize)
+				{
+				
+				setGraphicSize(Std.int(width * 2));
+				}
+
 				playAnim('idle');
 
 			case 'bf-christmas':

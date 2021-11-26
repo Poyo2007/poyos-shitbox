@@ -1221,7 +1221,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
-				case 'left-unchecked':
+				case 'nchecked':
 				add(blackFuck);
 				startCircle.loadGraphic(Paths.image('StartScreens/CircleTooSlow', 'shared'));
 				startCircle.x += 777;
