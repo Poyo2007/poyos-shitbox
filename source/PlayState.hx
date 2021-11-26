@@ -933,11 +933,10 @@ class PlayState extends MusicBeatState
 			var robloxtxt:FlxText;
 			var wordWrap:Bool = false;
       var autoSize:Bool = true;
-			
       robloxtxt = new FlxText;
-      robloxtxt.text = "drippy";
+      robloxtxt.text = ("drippy");
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
-      robloxtxt.scrollFactor = dad.scrollFactor:
+      robloxtxt.scrollFactor = dad.scrollFactor;
       robloxtxt.y = dad.y + 80;
       robloxtxt.x = dad.x;
       
@@ -946,6 +945,8 @@ class PlayState extends MusicBeatState
       robloxtxt.cameras = [camHUD];
 			  dad.y += 350;
 		}
+		
+		if (curC)
 
 
 		
