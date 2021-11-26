@@ -35,12 +35,14 @@ class Character extends FlxSprite
         if (!FlxG.save.data.optimize)
         {
 				tex = Paths.getSparrowAtlas('GF_assets');
+				frames = tex;
         }
         else
         {
         tex = Paths.getSparrowAtlas('opti_shitbox/GF_assets');
+        frames = tex;
         }
-				frames = tex;
+				
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
 				animation.addByPrefix('singRIGHT', 'GF Right Note', 24, false);
@@ -281,12 +283,14 @@ class Character extends FlxSprite
 			if (!FlxG.save.data.optimize)
 			{
 				var tex = Paths.getSparrowAtlas('BOYFRIEND','shared');
+				frames = tex;
 			}
 			else
       {
         var tex = Paths.getSparrowAtlas('opti_shitbox/BOYFRIEND','shared');
+        frames = tex;
       }
-				frames = tex;
+				
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
 				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
@@ -326,18 +330,18 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
-				
+	
 				case 'jamey':
 				if (!FlxG.save.data.optimize)
 				{
 				var tex = Paths.getSparrowAtlas('shitbox/Jamey','shared');
+				frames = tex;
 				}
 				else
         {
         var tex = Paths.getSparrowAtlas('opti_shitbox/Jamey','shared');
+        frames = tex;
         }
-				
-				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
 				animation.addByPrefix('singLEFT', 'BF NOTE RIGHT0', 24, false);
@@ -383,12 +387,13 @@ class Character extends FlxSprite
 				if (!FlxG.save.data.optimize)
 				{
 				var tex = Paths.getSparrowAtlas('shitbox/RP4','shared');
+				frames = tex;
 				}
 				else
         {
           var tex = Paths.getSparrowAtlas('opti_shitbox/RP4','shared');
+          frames = tex;
         }
-				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
 				if (isPlayer)
@@ -428,6 +433,8 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
+				
+				setGraphicSize(Std.int(width * 2));
 
 				playAnim('idle');
 
@@ -438,12 +445,14 @@ class Character extends FlxSprite
 				if (!FlxG.save.data.optimize)
         {
 				tex = Paths.getSparrowAtlas('shitbox/SonicAssets', 'shared');
+				frames = tex;
         }
         else
         {
         var tex = Paths.getSparrowAtlas('opti_shitbox/SonicAssets','shared');
+        frames = tex;
         }
-				frames = tex;
+				
 				animation.addByPrefix('idle', 'SONICmoveIDLE', 24);
 				animation.addByPrefix('singUP', 'SONICmoveUP', 24);
 				animation.addByPrefix('singRIGHT', 'SONICmoveRIGHT', 24);
@@ -475,12 +484,14 @@ class Character extends FlxSprite
 			if (!FlxG.save.data.optimize)
 			{
 				var tex = Paths.getSparrowAtlas('shitbox/soulbf','shared');
+				frames = tex;
 			}
 			else
       {
       var tex = Paths.getSparrowAtlas('shitbox/soulbf','shared');
+      frames = tex;
       }
-				frames = tex;
+				
 				animation.addByPrefix('idle', 'BF idle dance instance 1', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP instance 1', 24, false);
 				animation.addByPrefix('singLEFT', 'BF NOTE LEFT instance 1', 24, false);
@@ -512,6 +523,12 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
+				
+				if (FlxG.save.data.optimize)
+				{
+				
+				setGraphicSize(Std.int(width * 2));
+				}
 
 				playAnim('idle');
 
