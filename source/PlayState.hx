@@ -941,8 +941,6 @@ class PlayState extends MusicBeatState
       robloxtxt.x = dad.x;
       
       add(robloxtxt);
-      
-      robloxtxt.cameras = [camHUD];
 			  dad.y += 350;
 		}
 
