@@ -1327,7 +1327,7 @@ class PlayState extends MusicBeatState
 			
 			if (FlxG.save.data.optimize)
 				{
-				setGraphicSize(Std.int(width * 6));
+				daJumpscare.setGraphicSize(Std.int(width * 6));
 				}
 
 	
