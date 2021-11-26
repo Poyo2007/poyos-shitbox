@@ -468,7 +468,7 @@ class Character extends FlxSprite
 				
 				if (FlxG.save.data.optimize)
 				{
-				setGraphicSize(Std.int(width * ));
+				setGraphicSize(Std.int(width * 6));
 				}
 				
 			case 'soul':
