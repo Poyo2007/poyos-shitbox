@@ -184,9 +184,11 @@ class TitleState extends MusicBeatState
 		gfDance.antialiasing = true;
 		
 		var daninnocentTxt:FlxText;
+		var wordWrap:Bool = false;
+		var autoSize:Bool = true;
 
 daninnocentTxt = new FlxText(0, 0, 348);
-daninnocentTxt.text = "poyos playable covers :D";
+daninnocentTxt.text = "poyos shitbox";
 daninnocentTxt.setFormat(Paths.font("vcr.ttf"), 30, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 daninnocentTxt.scrollFactor.set();
 add(daninnocentTxt);
