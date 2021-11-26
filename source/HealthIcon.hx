@@ -40,6 +40,7 @@ class HealthIcon extends FlxSprite
 		animation.add('sonic', [24, 25], 0, false, isPlayer);
 		animation.add('poyo', [26, 27], 0, false, isPlayer);
 		animation.add('jamey', [28, 29], 0, false, isPlayer);
+		animation.add('soul', [0, 0], 0, false, isPlayer);
 		animation.play(char);
 		scrollFactor.set();
 	}

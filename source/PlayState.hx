@@ -207,9 +207,21 @@ class PlayState extends MusicBeatState
 		if(SONG.song.toLowerCase() == 'left-unchecked')
 		{	
 			daJumpscare = new FlxSprite(0,0);
+			if (!FlxG.save.data.optimize)
+			{
 			daJumpscare.frames = Paths.getSparrowAtlas('jumpscare/sonicJUMPSCARE');
+			}
+			else
+      {
+        daJumpscare.frames = Paths.getSparrowAtlas('opti_shitbox/sonicJUMPSCARE');
+      }
+      
 			daJumpscare.animation.addByPrefix('jump','sonicSPOOK',24, false);
 			daJumpscare.animation.play('jump');
+			if (FlxG.save.data.optimize)
+				{
+				setGraphicSize(Std.int(width * 6));
+				}
 			add(daJumpscare);
 			
 			
@@ -826,7 +838,10 @@ class PlayState extends MusicBeatState
 					bg.antialiasing = true;
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
+					if (!FlxG.save.data.optimize)
+					{
 					add(bg);
+					}
 
 					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
 					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
@@ -834,7 +849,10 @@ class PlayState extends MusicBeatState
 					stageFront.antialiasing = true;
 					stageFront.scrollFactor.set(0.9, 0.9);
 					stageFront.active = false;
+					if (!FlxG.save.data.optimize)
+					{
 					add(stageFront);
+					}
 
 					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
 					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
@@ -842,8 +860,10 @@ class PlayState extends MusicBeatState
 					stageCurtains.antialiasing = true;
 					stageCurtains.scrollFactor.set(1.3, 1.3);
 					stageCurtains.active = false;
-
+					if (!FlxG.save.data.optimize)
+					{
 					add(stageCurtains);
+					}
 			}
 		}
 		var gfVersion:String = 'gf';
@@ -1266,7 +1286,14 @@ class PlayState extends MusicBeatState
 			
 			daJumpscare = new FlxSprite(0,0);
 	
+			if (!FlxG.save.data.optimize)
+			{
 			daJumpscare.frames = Paths.getSparrowAtlas('jumpscare/sonicJUMPSCARE');
+			}
+			else
+      {
+        daJumpscare.frames = Paths.getSparrowAtlas('opti_shitbox/sonicJUMPSCARE');
+      }
 			daJumpscare.animation.addByPrefix('jump','sonicSPOOK',24, false);
 			
 			daJumpscare.screenCenter();
@@ -1296,6 +1323,11 @@ class PlayState extends MusicBeatState
 				case 1:
 				daJumpscare.alpha = 1;
 			}
+			
+			if (FlxG.save.data.optimize)
+				{
+				setGraphicSize(Std.int(width * 6));
+				}
 
 	
 			add(daJumpscare);
