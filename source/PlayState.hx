@@ -936,6 +936,7 @@ class PlayState extends MusicBeatState
       robloxtxt = new FlxText();
       robloxtxt.text = "drippy";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
+      robloxtxt.scrollFactor.set();
       robloxtxt.y = dad.y + 80;
       robloxtxt.x = dad.x;
       
@@ -966,8 +967,16 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 25;
 				dad.y += 200;
 				dad.x += 200;
+				if (!FlxG.save.data.optimize)
+				{
 				dad.scale.x = 1.1;
 				dad.scale.y = 1.1;
+				}
+				else
+      	{
+				dad.scale.x = 2.1;
+				dad.scale.y = 2.1;
+				}
 				dad.scrollFactor.set(1.37, 1);
 				boyfriend.scrollFactor.set(1.37, 1);
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y - 100);

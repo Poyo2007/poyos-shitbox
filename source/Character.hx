@@ -433,8 +433,10 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
-				
+				if (FlxG.save.data.optimize)
+				{
 				setGraphicSize(Std.int(width * 2));
+				}
 
 				playAnim('idle');
 
@@ -472,13 +474,13 @@ class Character extends FlxSprite
 				addOffset("singLAUGH", 83, -33);
 
 				addOffset("singDOWN-alt", 70, -27);
-	
-				playAnim('idle');
 				
 				if (FlxG.save.data.optimize)
 				{
 				setGraphicSize(Std.int(width * 6));
 				}
+	
+				playAnim('idle');
 				
 			case 'soul':
 			if (!FlxG.save.data.optimize)
@@ -488,7 +490,7 @@ class Character extends FlxSprite
 			}
 			else
       {
-      var tex = Paths.getSparrowAtlas('shitbox/soulbf','shared');
+      var tex = Paths.getSparrowAtlas('opti_shitbox/soulbf','shared');
       frames = tex;
       }
 				
@@ -524,6 +526,8 @@ class Character extends FlxSprite
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
 				
+				flipX = true;
+				
 				if (FlxG.save.data.optimize)
 				{
 				
@@ -537,8 +541,8 @@ class Character extends FlxSprite
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE LEFT0', 24, false);
 				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
 				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
 				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
