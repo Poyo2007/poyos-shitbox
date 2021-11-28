@@ -5,6 +5,7 @@ import lime.app.Future;
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.FlxSprite;
+import flixel.text.FlxText;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.util.FlxTimer;
 
@@ -51,7 +52,10 @@ class LoadingState extends MusicBeatState
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		gfDance.antialiasing = true;
 		
-		robloxtxt = new FlxText();
+		  var robloxtxt = new FlxText();
+		  var wordWrap:Bool = false;
+      var autoSize:Bool = true;
+  
       robloxtxt.text = "loading... go read a book or smth";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
       robloxtxt.scrollFactor.set(0.9, 0.9);
