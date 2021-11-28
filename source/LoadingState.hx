@@ -50,8 +50,13 @@ class LoadingState extends MusicBeatState
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		gfDance.antialiasing = true;
-		add(gfDance);
-		add(logo);
+		
+		robloxtxt = new FlxText();
+      robloxtxt.text = "loading... go read a book or smth";
+      robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
+      robloxtxt.scrollFactor.set(0.9, 0.9);
+      robloxtxt.screenCenter()
+      add(robloxtxt)
 		
 		initSongsManifest().onComplete
 		(

@@ -605,8 +605,7 @@ class PlayState extends MusicBeatState
 					  
 						defaultCamZoom = .7;
 						curStage = 'chamber';
-						if (!FlxG.save.data.optimize)
-						{
+						
 
 						wall = new FlxSprite(-2379.05, -1211.1);
 						wall.frames = Paths.getSparrowAtlas('Chamber/Wall');
@@ -614,11 +613,17 @@ class PlayState extends MusicBeatState
 						wall.animation.play('a');
 						wall.antialiasing = true;
 						wall.scrollFactor.set(1.1, 1.1);
+						if (!FlxG.save.data.optimize)
+						{
 						add(wall);
+						}
 
 						floor = new FlxSprite(-2349, 921.25);
 						floor.antialiasing = true;
+						if (!FlxG.save.data.optimize)
+						{
 						add(floor);
+						}
 						floor.frames = Paths.getSparrowAtlas('Chamber/Floor');
 						floor.animation.addByPrefix('a', 'floor blue');
 						floor.animation.addByPrefix('b', 'floor yellow');
@@ -627,7 +632,10 @@ class PlayState extends MusicBeatState
 						floor.antialiasing = true;
 
 						fleetwaybgshit = new FlxSprite(-2629.05, -1344.05);
+						if (!FlxG.save.data.optimize)
+						{
 						add(fleetwaybgshit);
+						}
 						fleetwaybgshit.frames = Paths.getSparrowAtlas('Chamber/FleetwayBGshit');
 						fleetwaybgshit.animation.addByPrefix('a', 'BGblue');
 						fleetwaybgshit.animation.addByPrefix('b', 'BGyellow');
@@ -643,7 +651,10 @@ class PlayState extends MusicBeatState
 						emeraldbeam.animation.play('a');
 						emeraldbeam.scrollFactor.set(1.1, 1);
 						emeraldbeam.visible = true; // this starts true, then when sonic falls in and screen goes white, this turns into flase
+            if (!FlxG.save.data.optimize)
+            {
 						add(emeraldbeam);
+            }
 
 						var emeralds:FlxSprite = new FlxSprite(326.6, -191.75);
 						emeralds.antialiasing = true;
@@ -652,7 +663,10 @@ class PlayState extends MusicBeatState
 						emeralds.animation.play('a');
 						emeralds.scrollFactor.set(1.1, 1);
 						emeralds.antialiasing = true;
+						if (!FlxG.save.data.optimize)
+						{
 						add(emeralds);
+						}
 
 						porker = new FlxSprite(2880.15, -762.8);
 						porker.frames = Paths.getSparrowAtlas('Chamber/Porker Lewis');
@@ -660,7 +674,7 @@ class PlayState extends MusicBeatState
 
 						porker.scrollFactor.set(1.4, 1);
 						porker.antialiasing = true;
-						}
+						
 					}
 			case 'you-cant-run':
 				{
@@ -1082,8 +1096,8 @@ class PlayState extends MusicBeatState
       robloxtxt = new FlxText();
       robloxtxt.text = "drippy";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
-      robloxtxt.scrollFactor.set(0.9, 0.9);
-      robloxtxt.y = dad.y + 68;
+      robloxtxt.scrollFactor.set(1, 1);
+      robloxtxt.y = dad.y + 70;
       robloxtxt.x = dad.x + -20;
       add(robloxtxt);
 		}
