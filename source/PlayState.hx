@@ -1004,11 +1004,11 @@ class PlayState extends MusicBeatState
       robloxtxt.text = "drippy";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
       robloxtxt.scrollFactor.set(0.9, 0.9);
-      robloxtxt.y = dad.y + 80;
+      robloxtxt.y = dad.y + 60;
       robloxtxt.x = dad.x;
       
       add(robloxtxt);
-			  dad.y += 250;
+			  dad.y += 150;
 		}
 
 
