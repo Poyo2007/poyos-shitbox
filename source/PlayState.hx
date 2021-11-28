@@ -602,8 +602,11 @@ class PlayState extends MusicBeatState
 				}
 			case 'chaos': // fleetway my beloved
 					{
+					  
 						defaultCamZoom = .7;
 						curStage = 'chamber';
+						if (!FlxG.save.data.optimize)
+						{
 
 						wall = new FlxSprite(-2379.05, -1211.1);
 						wall.frames = Paths.getSparrowAtlas('Chamber/Wall');
@@ -657,6 +660,7 @@ class PlayState extends MusicBeatState
 
 						porker.scrollFactor.set(1.4, 1);
 						porker.antialiasing = true;
+						}
 					}
 			case 'you-cant-run':
 				{
@@ -933,6 +937,7 @@ class PlayState extends MusicBeatState
 					}
 			}
 		}
+
 		var gfVersion:String = 'gf';
 
 		switch (curStage)
@@ -997,18 +1002,7 @@ class PlayState extends MusicBeatState
 				dad.x -= 130;
 				dad.y += -50;
 			case 'poyo':
-			var robloxtxt:FlxText;
-			var wordWrap:Bool = false;
-      var autoSize:Bool = true;
-      robloxtxt = new FlxText();
-      robloxtxt.text = "drippy";
-      robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
-      robloxtxt.scrollFactor.set(0.9, 0.9);
-      robloxtxt.y = dad.y + 60;
-      robloxtxt.x = dad.x;
-      
-      add(robloxtxt);
-			  dad.y += 150;
+			  dad.y += 100;
 		}
 
 
@@ -1033,7 +1027,7 @@ class PlayState extends MusicBeatState
 				boyfriend.y = 685.6;
 
 				dad.x = 61.15;
-				dad.y = 690.6;
+				dad.y = 687.6;
 
 				dad.scrollFactor.set(1.1, 1);
 				boyfriend.scrollFactor.set(1.1, 1);
@@ -1049,8 +1043,8 @@ class PlayState extends MusicBeatState
 				}
 				else
       	{
-				dad.scale.x = 2.1;
-				dad.scale.y = 2.1;
+				dad.scale.x = 4.1;
+				dad.scale.y = 4.1;
 				}
 				dad.scrollFactor.set(1.37, 1);
 				boyfriend.scrollFactor.set(1.37, 1);
@@ -1078,8 +1072,26 @@ class PlayState extends MusicBeatState
 				gf.x += 180;
 				gf.y += 300;
 		}
-
-		add(gf);
+		
+		if (dad.curCharacter == 'poyo')
+		{
+		  var robloxtxt:FlxText;
+			var wordWrap:Bool = false;
+      var autoSize:Bool = true;
+  
+      robloxtxt = new FlxText();
+      robloxtxt.text = "drippy";
+      robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
+      robloxtxt.scrollFactor.set(0.9, 0.9);
+      robloxtxt.y = dad.y + 60;
+      robloxtxt.x = dad.x;
+      add(robloxtxt);
+		}
+		
+		if (!FlxG.save.data.optimize)
+    {
+		  add(gf);
+    }
 
 		// Shitty layering but whatev it works LOL
 		if (curStage == 'limo')
