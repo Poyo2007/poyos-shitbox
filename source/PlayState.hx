@@ -159,6 +159,15 @@ class PlayState extends MusicBeatState
 	var blackFuck:FlxSprite;
 	var startCircle:FlxSprite;
 	var startText:FlxSprite;
+	
+	var wall:FlxSprite;
+	var porker:FlxSprite;
+	var thechamber:FlxSprite;
+	var floor:FlxSprite;
+	var fleetwaybgshit:FlxSprite;
+	var emeraldbeam:FlxSprite;
+	var emeraldbeamyellow:FlxSprite;
+	var pebles:FlxSprite;
 
 	var fc:Bool = true;
 
@@ -591,6 +600,64 @@ class PlayState extends MusicBeatState
 
 
 				}
+			case 'chaos': // fleetway my beloved
+					{
+						defaultCamZoom = .7;
+						curStage = 'chamber';
+
+						wall = new FlxSprite(-2379.05, -1211.1);
+						wall.frames = Paths.getSparrowAtlas('Chamber/Wall');
+						wall.animation.addByPrefix('a', 'Wall instance 1');
+						wall.animation.play('a');
+						wall.antialiasing = true;
+						wall.scrollFactor.set(1.1, 1.1);
+						add(wall);
+
+						floor = new FlxSprite(-2349, 921.25);
+						floor.antialiasing = true;
+						add(floor);
+						floor.frames = Paths.getSparrowAtlas('Chamber/Floor');
+						floor.animation.addByPrefix('a', 'floor blue');
+						floor.animation.addByPrefix('b', 'floor yellow');
+						floor.animation.play('a', true); // whenever song starts make sure this is playing
+						floor.scrollFactor.set(1.1, 1);
+						floor.antialiasing = true;
+
+						fleetwaybgshit = new FlxSprite(-2629.05, -1344.05);
+						add(fleetwaybgshit);
+						fleetwaybgshit.frames = Paths.getSparrowAtlas('Chamber/FleetwayBGshit');
+						fleetwaybgshit.animation.addByPrefix('a', 'BGblue');
+						fleetwaybgshit.animation.addByPrefix('b', 'BGyellow');
+						fleetwaybgshit.animation.play('b', true);
+						fleetwaybgshit.animation.play('a', true);
+						fleetwaybgshit.antialiasing = true;
+						fleetwaybgshit.scrollFactor.set(1.1, 1);
+
+						emeraldbeam = new FlxSprite(0, -1376.95 - 200);
+						emeraldbeam.antialiasing = true;
+						emeraldbeam.frames = Paths.getSparrowAtlas('Chamber/Emerald Beam');
+						emeraldbeam.animation.addByPrefix('a', 'Emerald Beam instance 1', 24, true);
+						emeraldbeam.animation.play('a');
+						emeraldbeam.scrollFactor.set(1.1, 1);
+						emeraldbeam.visible = true; // this starts true, then when sonic falls in and screen goes white, this turns into flase
+						add(emeraldbeam);
+
+						var emeralds:FlxSprite = new FlxSprite(326.6, -191.75);
+						emeralds.antialiasing = true;
+						emeralds.frames = Paths.getSparrowAtlas('Chamber/Emeralds', 'exe');
+						emeralds.animation.addByPrefix('a', 'TheEmeralds instance 1', 24, true);
+						emeralds.animation.play('a');
+						emeralds.scrollFactor.set(1.1, 1);
+						emeralds.antialiasing = true;
+						add(emeralds);
+
+						porker = new FlxSprite(2880.15, -762.8);
+						porker.frames = Paths.getSparrowAtlas('Chamber/Porker Lewis');
+						porker.animation.addByPrefix('porkerbop', 'Porker FG');
+
+						porker.scrollFactor.set(1.4, 1);
+						porker.antialiasing = true;
+					}
 			case 'you-cant-run':
 				{
 				defaultCamZoom = 1.0;
@@ -936,12 +1003,12 @@ class PlayState extends MusicBeatState
       robloxtxt = new FlxText();
       robloxtxt.text = "drippy";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
-      robloxtxt.scrollFactor.set();
+      robloxtxt.scrollFactor.set(0.9, 0.9);
       robloxtxt.y = dad.y + 80;
       robloxtxt.x = dad.x;
       
       add(robloxtxt);
-			  dad.y += 350;
+			  dad.y += 250;
 		}
 
 
@@ -960,6 +1027,16 @@ class PlayState extends MusicBeatState
 
 			case 'mall':
 				boyfriend.x += 200;
+				
+			case 'chamber':
+				boyfriend.x = 2040.55;
+				boyfriend.y = 685.6;
+
+				dad.x = 61.15;
+				dad.y = 690.6;
+
+				dad.scrollFactor.set(1.1, 1);
+				boyfriend.scrollFactor.set(1.1, 1);
 				
 			case 'SONICstage':
 				boyfriend.y += 25;
@@ -3629,6 +3706,9 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+		case 'chamber':
+					porker.animation.play('porkerbop');
+		  
 			case 'school':
 				bgGirls.dance();
 
