@@ -55,8 +55,8 @@ class LoadingState extends MusicBeatState
       robloxtxt.text = "loading... go read a book or smth";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 30);
       robloxtxt.scrollFactor.set(0.9, 0.9);
-      robloxtxt.screenCenter()
-      add(robloxtxt)
+      robloxtxt.screenCenter();
+      add(robloxtxt);
 		
 		initSongsManifest().onComplete
 		(
