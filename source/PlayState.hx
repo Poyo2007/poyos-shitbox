@@ -658,7 +658,7 @@ class PlayState extends MusicBeatState
 
 						var emeralds:FlxSprite = new FlxSprite(326.6, -191.75);
 						emeralds.antialiasing = true;
-						emeralds.frames = Paths.getSparrowAtlas('Chamber/Emeralds', 'exe');
+						emeralds.frames = Paths.getSparrowAtlas('Chamber/Emeralds', 'shared');
 						emeralds.animation.addByPrefix('a', 'TheEmeralds instance 1', 24, true);
 						emeralds.animation.play('a');
 						emeralds.scrollFactor.set(1.1, 1);
@@ -2515,6 +2515,11 @@ class PlayState extends MusicBeatState
 								dad.playAnim('singDOWN' + altAnim, true);
 							case 0:
 								dad.playAnim('singLEFT' + altAnim, true);
+						}
+						
+						if (dad.curCharacter == "poyo")
+						{
+						  health -= 0.0;
 						}
 	
 						dad.holdTimer = 0;
