@@ -2507,6 +2507,10 @@ class PlayState extends MusicBeatState
 	
 						switch (Math.abs(daNote.noteData))
 						{
+						  if (dad.curCharacter == "poyo")
+						{
+						  health -= 0.1;
+						}
 							case 2:
 								dad.playAnim('singUP' + altAnim, true);
 							case 3:
@@ -2515,11 +2519,6 @@ class PlayState extends MusicBeatState
 								dad.playAnim('singDOWN' + altAnim, true);
 							case 0:
 								dad.playAnim('singLEFT' + altAnim, true);
-						}
-						
-						if (dad.curCharacter == "poyo")
-						{
-						  health -= 0.0;
 						}
 	
 						dad.holdTimer = 0;
