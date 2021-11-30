@@ -2510,25 +2510,25 @@ class PlayState extends MusicBeatState
 							case 2:
 							if (dad.curCharacter == "poyo")
 						  {
-						    health -= 0.1;
+						    health -= 0.01;
 					  	}
 								dad.playAnim('singUP' + altAnim, true);
 							case 3:
 							if (dad.curCharacter == "poyo")
 						  {
-						    health -= 0.1;
+						    health -= 0.01;
 					  	}
 								dad.playAnim('singRIGHT' + altAnim, true);
 							case 1:
 							if (dad.curCharacter == "poyo")
 						  {
-						    health -= 0.1;
+						    health -= 0.01;
 					  	}
 								dad.playAnim('singDOWN' + altAnim, true);
 							case 0:
 							if (dad.curCharacter == "poyo")
 						  {
-						    health -= 0.1;
+						    health -= 0.01;
 					  	}
 								dad.playAnim('singLEFT' + altAnim, true);
 						}
