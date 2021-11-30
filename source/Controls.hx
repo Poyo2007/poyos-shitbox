@@ -334,7 +334,7 @@ class Controls extends FlxActionSet
 		}
 	}
 	
-
+#if mobile
 	public function removeFlxInput(Tinputs) {
 		for (action in this.digitalActions)
 		{
@@ -353,6 +353,7 @@ class Controls extends FlxActionSet
 			}
 		}
 	}
+	#end
 	
 
 	

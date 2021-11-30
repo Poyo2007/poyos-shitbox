@@ -137,13 +137,14 @@ class GameplayCustomizeState extends MusicBeatState
             FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxG.switchState(new OptionsMenu());
         }
-		
+		    #if mobile
 		if (FlxG.android.justReleased.BACK)
         {
             FlxG.mouse.visible = false;
             FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxG.switchState(new OptionsMenu());
         }
+        #end
     }
 
     override function beatHit() 
