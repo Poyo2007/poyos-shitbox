@@ -32,7 +32,7 @@ class Character extends FlxSprite
 		{
 			case 'gf':
 				// GIRLFRIEND CODE
-        #if OPTIMIZE
+        #if !OPTIMIZE
         {
 				tex = Paths.getSparrowAtlas('GF_assets');
 				frames = tex;
@@ -69,7 +69,7 @@ class Character extends FlxSprite
 				addOffset('hairFall', 0, -9);
 
 				addOffset('scared', -2, -17);
-				#if OPTIMIZE
+				#if !OPTIMIZE
 				{
 				  setGraphicSize(Std.int(width * 2));
 				}
@@ -282,7 +282,7 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf':
-			#if OPTIMIZE
+			#if !OPTIMIZE
 			{
 				var tex = Paths.getSparrowAtlas('BOYFRIEND','shared');
 				frames = tex;
@@ -325,7 +325,7 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
-				#if OPTIMIZE
+				#if !OPTIMIZE
 				{
 				setGraphicSize(Std.int(width * 2));
 				}
@@ -336,7 +336,7 @@ class Character extends FlxSprite
 				flipX = true;
 	
 				case 'jamey':
-				#if OPTIMIZE
+				#if !OPTIMIZE
 				{
 				var tex = Paths.getSparrowAtlas('shitbox/Jamey','shared');
 				frames = tex;
@@ -379,7 +379,7 @@ class Character extends FlxSprite
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
 				
-				#if OPTIMIZE
+				#if !OPTIMIZE
 				{
 				setGraphicSize(Std.int(width * 2));
 				}
@@ -410,7 +410,7 @@ class Character extends FlxSprite
 				
 				case 'sonic':
 				
-				#if OPTIMIZE
+				#if !OPTIMIZE
         {
 				tex = Paths.getSparrowAtlas('shitbox/SonicAssets', 'shared');
 				frames = tex;
@@ -442,7 +442,7 @@ class Character extends FlxSprite
 
 				addOffset("singDOWN-alt", 70, -27);
 				
-				#if OPTIMIZE
+				#if !OPTIMIZE
 				{
 				setGraphicSize(Std.int(width * 6));
 				}
@@ -451,7 +451,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 			case 'soul':
-			#if OPTIMIZE
+			#if !OPTIMIZE
 			{
 				var tex = Paths.getSparrowAtlas('shitbox/soulbf','shared');
 				frames = tex;
@@ -497,7 +497,7 @@ class Character extends FlxSprite
 				
 				flipX = true;
 				
-				#if OPTIMIZE
+				#if !OPTIMIZE
 				{
 				
 				setGraphicSize(Std.int(width * 2));
@@ -507,7 +507,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 			case 'hd':
-			#if OPTIMIZE
+			#if !OPTIMIZE
 			{
 				var tex = Paths.getSparrowAtlas('shitbox/144p','shared');
 				frames = tex;
@@ -531,7 +531,7 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -9, 15);
 				addOffset("singDOWN", 0, -24);
 				
-				#if OPTIMIZE
+				#if !OPTIMIZE
 				{
 				
 				setGraphicSize(Std.int(width * 2));
@@ -541,7 +541,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 				case 'mrfunky':
-			#if OPTIMIZE
+			#if !OPTIMIZE
 			{
 				var tex = Paths.getSparrowAtlas('shitbox/nyan','shared');
 				frames = tex;
@@ -565,7 +565,7 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -104, -30);
 				addOffset("singDOWN", 80, -40);
 				
-				#if OPTIMIZE
+				#if !OPTIMIZE
 				{
 				
 				setGraphicSize(Std.int(width * 2));

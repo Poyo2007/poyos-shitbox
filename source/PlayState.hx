@@ -506,6 +506,8 @@ class PlayState extends MusicBeatState
 					santa.antialiasing = true;
 					add(santa);
 			}
+			#if !OPTIMIZE
+{
 		  case 'left-unchecked':
 				{
 				defaultCamZoom = 1.0;
@@ -517,32 +519,20 @@ class PlayState extends MusicBeatState
 				sSKY.antialiasing = true;
 				sSKY.scrollFactor.set(2, 2);
 				sSKY.active = false;
-				#if !OPTIMIZE
-				{
 				add(sSKY);
-				}
-				#end
 
 				var hills:FlxSprite = new FlxSprite(-264, -156 + 150).loadGraphic(Paths.image('PolishedP1/HILLS'));
 				hills.antialiasing = true;
 				hills.scrollFactor.set(1.1, 1);
 				hills.active = false;
-				#if !OPTIMIZE
-				{
 				add(hills);
-				}
-				#end
 
 				var bg2:FlxSprite = new FlxSprite(-355, -289 + 150).loadGraphic(Paths.image('PolishedP1/FLOOR2'));
 				bg2.updateHitbox();
 				bg2.antialiasing = true;
 				bg2.scrollFactor.set(1.2, 1);
 				bg2.active = false;
-				#if !OPTIMIZE
-				{
 				add(bg2);
-				}
-				#end
 
 				bgspec = new FlxSprite(-355, -289 + 120);
 				bgspec.updateHitbox();
@@ -556,45 +546,28 @@ class PlayState extends MusicBeatState
 				bg.antialiasing = true;
 				bg.scrollFactor.set(1.3, 1);
 				bg.active = false;
-				#if !OPTIMIZE
-				{
 				add(bg);
-				}
-				#end
 
 				var eggman:FlxSprite = new FlxSprite(-218, -219 + 150).loadGraphic(Paths.image('PolishedP1/EGGMAN'));
 				eggman.updateHitbox();
 				eggman.antialiasing = true;     
 				eggman.scrollFactor.set(1.32, 1);
 				eggman.active = false;
-				
-				#if !OPTIMIZE
-				{
 				add(eggman);
-				}
-				#end
 
 				var tail:FlxSprite = new FlxSprite(-199 - 150, -259 + 150).loadGraphic(Paths.image('PolishedP1/TAIL'));
 				tail.updateHitbox();
 				tail.antialiasing = true;
 				tail.scrollFactor.set(1.34, 1);
 				tail.active = false;
-				#if !OPTIMIZE
-				{
 				add(tail);
-				}
-				#end
 
 				var knuckle:FlxSprite = new FlxSprite(185 + 100, -350 + 150).loadGraphic(Paths.image('PolishedP1/KNUCKLE'));
 				knuckle.updateHitbox();
 				knuckle.antialiasing = true;
 				knuckle.scrollFactor.set(1.36, 1);
 				knuckle.active = false;
-				#if !OPTIMIZE
-				{
 				add(knuckle);
-				}
-				#end
 				
 
 				var sticklol:FlxSprite = new FlxSprite(-200, -240).loadGraphic(Paths.image('PolishedP1/STICKLOL'));
@@ -602,11 +575,7 @@ class PlayState extends MusicBeatState
 				sticklol.antialiasing = true;
 				sticklol.scrollFactor.set(1.37, 1);
 				sticklol.active = false;
-				#if !OPTIMIZE
-				{
 				add(sticklol);
-				}
-				#end
 
 
 				}
@@ -623,19 +592,12 @@ class PlayState extends MusicBeatState
 						wall.animation.play('a');
 						wall.antialiasing = true;
 						wall.scrollFactor.set(1.1, 1.1);
-						#if !OPTIMIZE
-						{
 						add(wall);
-						}
-						#end
 
 						floor = new FlxSprite(-2349, 921.25);
 						floor.antialiasing = true;
-						#if !OPTIMIZE
-						{
 						add(floor);
-						}
-						#end
+
 						floor.frames = Paths.getSparrowAtlas('Chamber/Floor');
 						floor.animation.addByPrefix('a', 'floor blue');
 						floor.animation.addByPrefix('b', 'floor yellow');
@@ -644,11 +606,7 @@ class PlayState extends MusicBeatState
 						floor.antialiasing = true;
 
 						fleetwaybgshit = new FlxSprite(-2629.05, -1344.05);
-						#if !OPTIMIZE
-						{
 						add(fleetwaybgshit);
-						}
-						#end
 						fleetwaybgshit.frames = Paths.getSparrowAtlas('Chamber/FleetwayBGshit');
 						fleetwaybgshit.animation.addByPrefix('a', 'BGblue');
 						fleetwaybgshit.animation.addByPrefix('b', 'BGyellow');
@@ -664,11 +622,7 @@ class PlayState extends MusicBeatState
 						emeraldbeam.animation.play('a');
 						emeraldbeam.scrollFactor.set(1.1, 1);
 						emeraldbeam.visible = true; // this starts true, then when sonic falls in and screen goes white, this turns into flase
-            #if !OPTIMIZE
-            {
 						add(emeraldbeam);
-            }
-            #end
             
             thechamber = new FlxSprite(-225.05, 463.9);
 						thechamber.frames = Paths.getSparrowAtlas('Chamber/The Chamber');
@@ -684,11 +638,7 @@ class PlayState extends MusicBeatState
 						emeralds.animation.play('a');
 						emeralds.scrollFactor.set(1.1, 1);
 						emeralds.antialiasing = true;
-						#if !OPTIMIZE
-						{
 						add(emeralds);
-						}
-						#end
 
 						porker = new FlxSprite(2880.15, -762.8);
 						porker.frames = Paths.getSparrowAtlas('Chamber/Porker Lewis');
@@ -696,151 +646,8 @@ class PlayState extends MusicBeatState
 
 						porker.scrollFactor.set(1.4, 1);
 						porker.antialiasing = true;
-						
+	
 					}
-			case 'winter-horrorland':
-			{
-					curStage = 'mallEvil';
-					var bg:FlxSprite = new FlxSprite(-400, -500).loadGraphic(Paths.image('christmas/evilBG'));
-					bg.antialiasing = true;
-					bg.scrollFactor.set(0.2, 0.2);
-					bg.active = false;
-					bg.setGraphicSize(Std.int(bg.width * 0.8));
-					bg.updateHitbox();
-					add(bg);
-
-					var evilTree:FlxSprite = new FlxSprite(300, -300).loadGraphic(Paths.image('christmas/evilTree'));
-					evilTree.antialiasing = true;
-					evilTree.scrollFactor.set(0.2, 0.2);
-					add(evilTree);
-
-					var evilSnow:FlxSprite = new FlxSprite(-200, 700).loadGraphic(Paths.image("christmas/evilSnow"));
-						evilSnow.antialiasing = true;
-					add(evilSnow);
-					}
-			case 'senpai' | 'roses':
-			{
-					curStage = 'school';
-
-					// defaultCamZoom = 0.9;
-
-					var bgSky = new FlxSprite().loadGraphic(Paths.image('weeb/weebSky'));
-					bgSky.scrollFactor.set(0.1, 0.1);
-					add(bgSky);
-
-					var repositionShit = -200;
-
-					var bgSchool:FlxSprite = new FlxSprite(repositionShit, 0).loadGraphic(Paths.image('weeb/weebSchool'));
-					bgSchool.scrollFactor.set(0.6, 0.90);
-					add(bgSchool);
-
-					var bgStreet:FlxSprite = new FlxSprite(repositionShit).loadGraphic(Paths.image('weeb/weebStreet'));
-					bgStreet.scrollFactor.set(0.95, 0.95);
-					add(bgStreet);
-
-					var fgTrees:FlxSprite = new FlxSprite(repositionShit + 170, 130).loadGraphic(Paths.image('weeb/weebTreesBack'));
-					fgTrees.scrollFactor.set(0.9, 0.9);
-					add(fgTrees);
-
-					var bgTrees:FlxSprite = new FlxSprite(repositionShit - 380, -800);
-					var treetex = Paths.getPackerAtlas('weeb/weebTrees');
-					bgTrees.frames = treetex;
-					bgTrees.animation.add('treeLoop', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], 12);
-					bgTrees.animation.play('treeLoop');
-					bgTrees.scrollFactor.set(0.85, 0.85);
-					add(bgTrees);
-
-					var treeLeaves:FlxSprite = new FlxSprite(repositionShit, -40);
-					treeLeaves.frames = Paths.getSparrowAtlas('weeb/petals');
-					treeLeaves.animation.addByPrefix('leaves', 'PETALS ALL', 24, true);
-					treeLeaves.animation.play('leaves');
-					treeLeaves.scrollFactor.set(0.85, 0.85);
-					add(treeLeaves);
-
-					var widShit = Std.int(bgSky.width * 6);
-
-					bgSky.setGraphicSize(widShit);
-					bgSchool.setGraphicSize(widShit);
-					bgStreet.setGraphicSize(widShit);
-					bgTrees.setGraphicSize(Std.int(widShit * 1.4));
-					fgTrees.setGraphicSize(Std.int(widShit * 0.8));
-					treeLeaves.setGraphicSize(widShit);
-
-					fgTrees.updateHitbox();
-					bgSky.updateHitbox();
-					bgSchool.updateHitbox();
-					bgStreet.updateHitbox();
-					bgTrees.updateHitbox();
-					treeLeaves.updateHitbox();
-
-					bgGirls = new BackgroundGirls(-100, 190);
-					bgGirls.scrollFactor.set(0.9, 0.9);
-
-					if (SONG.song.toLowerCase() == 'roses')
-						{
-							bgGirls.getScared();
-					}
-
-					bgGirls.setGraphicSize(Std.int(bgGirls.width * daPixelZoom));
-					bgGirls.updateHitbox();
-					add(bgGirls);
-			}
-			case 'thorns':
-			{
-					curStage = 'schoolEvil';
-
-					var waveEffectBG = new FlxWaveEffect(FlxWaveMode.ALL, 2, -1, 3, 2);
-					var waveEffectFG = new FlxWaveEffect(FlxWaveMode.ALL, 2, -1, 5, 2);
-
-					var posX = 400;
-						var posY = 200;
-
-					var bg:FlxSprite = new FlxSprite(posX, posY);
-					bg.frames = Paths.getSparrowAtlas('weeb/animatedEvilSchool');
-					bg.animation.addByPrefix('idle', 'background 2', 24);
-					bg.animation.play('idle');
-					bg.scrollFactor.set(0.8, 0.9);
-					bg.scale.set(6, 6);
-					add(bg);
-
-					/* 
-							var bg:FlxSprite = new FlxSprite(posX, posY).loadGraphic(Paths.image('weeb/evilSchoolBG'));
-							bg.scale.set(6, 6);
-							// bg.setGraphicSize(Std.int(bg.width * 6));
-							// bg.updateHitbox();
-							add(bg);
-							var fg:FlxSprite = new FlxSprite(posX, posY).loadGraphic(Paths.image('weeb/evilSchoolFG'));
-							fg.scale.set(6, 6);
-							// fg.setGraphicSize(Std.int(fg.width * 6));
-							// fg.updateHitbox();
-							add(fg);
-							wiggleShit.effectType = WiggleEffectType.DREAMY;
-							wiggleShit.waveAmplitude = 0.01;
-							wiggleShit.waveFrequency = 60;
-							wiggleShit.waveSpeed = 0.8;
-						*/
-
-					// bg.shader = wiggleShit.shader;
-					// fg.shader = wiggleShit.shader;
-
-					/* 
-								var waveSprite = new FlxEffectSprite(bg, [waveEffectBG]);
-								var waveSpriteFG = new FlxEffectSprite(fg, [waveEffectFG]);
-								// Using scale since setGraphicSize() doesnt work???
-								waveSprite.scale.set(6, 6);
-								waveSpriteFG.scale.set(6, 6);
-								waveSprite.setPosition(posX, posY);
-								waveSpriteFG.setPosition(posX, posY);
-								waveSprite.scrollFactor.set(0.7, 0.8);
-								waveSpriteFG.scrollFactor.set(0.9, 0.8);
-								// waveSprite.setGraphicSize(Std.int(waveSprite.width * 6));
-								// waveSprite.updateHitbox();
-								// waveSpriteFG.setGraphicSize(Std.int(fg.width * 6));
-								// waveSpriteFG.updateHitbox();
-								add(waveSprite);
-								add(waveSpriteFG);
-						*/
-			}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -849,11 +656,7 @@ class PlayState extends MusicBeatState
 					bg.antialiasing = true;
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
-					#if !OPTIMIZE
-					{
 					add(bg);
-					}
-					#end
 
 					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
 					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
@@ -861,11 +664,7 @@ class PlayState extends MusicBeatState
 					stageFront.antialiasing = true;
 					stageFront.scrollFactor.set(0.9, 0.9);
 					stageFront.active = false;
-					#if !OPTIMIZE
-					{
 					add(stageFront);
-					}
-					#end
 
 					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
 					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
@@ -873,12 +672,23 @@ class PlayState extends MusicBeatState
 					stageCurtains.antialiasing = true;
 					stageCurtains.scrollFactor.set(1.3, 1.3);
 					stageCurtains.active = false;
-					#if !OPTIMIZE
-					{
 					add(stageCurtains);
-					}
-					#end
 			}
+}
+#else
+{
+  case 'left-unchecked' | 'chaos' | 'ectospasm' | 'you-cant-run':
+			{
+					defaultCamZoom = 0.9;
+					curStage = 'stage';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('bg'));
+					//omg blank
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+			}
+			#end
+}
 		}
 
 		var gfVersion:String = 'gf';
