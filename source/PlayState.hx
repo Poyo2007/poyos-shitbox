@@ -216,18 +216,18 @@ class PlayState extends MusicBeatState
 		if(SONG.song.toLowerCase() == 'left-unchecked')
 		{	
 			daJumpscare = new FlxSprite(0,0);
-			if (!FlxG.save.data.optimize)
+			#if !OPTIMIZE
 			{
 			daJumpscare.frames = Paths.getSparrowAtlas('jumpscare/sonicJUMPSCARE');
 			}
-			else
+			#else
       {
         daJumpscare.frames = Paths.getSparrowAtlas('opti_shitbox/sonicJUMPSCARE');
       }
       
 			daJumpscare.animation.addByPrefix('jump','sonicSPOOK',24, false);
 			daJumpscare.animation.play('jump');
-			if (FlxG.save.data.optimize)
+			#if OPTIMIZE
 				{
 				daJumpscare.setGraphicSize(Std.int(daJumpscare.width * 6));
 				}
@@ -515,7 +515,7 @@ class PlayState extends MusicBeatState
 				sSKY.antialiasing = true;
 				sSKY.scrollFactor.set(2, 2);
 				sSKY.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(sSKY);
 				}
@@ -524,7 +524,7 @@ class PlayState extends MusicBeatState
 				hills.antialiasing = true;
 				hills.scrollFactor.set(1.1, 1);
 				hills.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(hills);
 				}
@@ -534,7 +534,7 @@ class PlayState extends MusicBeatState
 				bg2.antialiasing = true;
 				bg2.scrollFactor.set(1.2, 1);
 				bg2.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(bg2);
 				}
@@ -551,7 +551,7 @@ class PlayState extends MusicBeatState
 				bg.antialiasing = true;
 				bg.scrollFactor.set(1.3, 1);
 				bg.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(bg);
 				}
@@ -562,7 +562,7 @@ class PlayState extends MusicBeatState
 				eggman.scrollFactor.set(1.32, 1);
 				eggman.active = false;
 				
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(eggman);
 				}
@@ -572,7 +572,7 @@ class PlayState extends MusicBeatState
 				tail.antialiasing = true;
 				tail.scrollFactor.set(1.34, 1);
 				tail.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(tail);
 				}
@@ -582,7 +582,7 @@ class PlayState extends MusicBeatState
 				knuckle.antialiasing = true;
 				knuckle.scrollFactor.set(1.36, 1);
 				knuckle.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(knuckle);
 				}
@@ -593,7 +593,7 @@ class PlayState extends MusicBeatState
 				sticklol.antialiasing = true;
 				sticklol.scrollFactor.set(1.37, 1);
 				sticklol.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(sticklol);
 				}
@@ -613,14 +613,14 @@ class PlayState extends MusicBeatState
 						wall.animation.play('a');
 						wall.antialiasing = true;
 						wall.scrollFactor.set(1.1, 1.1);
-						if (!FlxG.save.data.optimize)
+						#if !OPTIMIZE
 						{
 						add(wall);
 						}
 
 						floor = new FlxSprite(-2349, 921.25);
 						floor.antialiasing = true;
-						if (!FlxG.save.data.optimize)
+						#if !OPTIMIZE
 						{
 						add(floor);
 						}
@@ -632,7 +632,7 @@ class PlayState extends MusicBeatState
 						floor.antialiasing = true;
 
 						fleetwaybgshit = new FlxSprite(-2629.05, -1344.05);
-						if (!FlxG.save.data.optimize)
+						#if !OPTIMIZE
 						{
 						add(fleetwaybgshit);
 						}
@@ -651,7 +651,7 @@ class PlayState extends MusicBeatState
 						emeraldbeam.animation.play('a');
 						emeraldbeam.scrollFactor.set(1.1, 1);
 						emeraldbeam.visible = true; // this starts true, then when sonic falls in and screen goes white, this turns into flase
-            if (!FlxG.save.data.optimize)
+            #if !OPTIMIZE
             {
 						add(emeraldbeam);
             }
@@ -663,7 +663,7 @@ class PlayState extends MusicBeatState
 						emeralds.animation.play('a');
 						emeralds.scrollFactor.set(1.1, 1);
 						emeralds.antialiasing = true;
-						if (!FlxG.save.data.optimize)
+						#if !OPTIMIZE
 						{
 						add(emeralds);
 						}
@@ -687,7 +687,7 @@ class PlayState extends MusicBeatState
 				sSKY.antialiasing = true;
 				sSKY.scrollFactor.set(2, 2);
 				sSKY.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(sSKY);
 				}
@@ -696,7 +696,7 @@ class PlayState extends MusicBeatState
 				hills.antialiasing = true;
 				hills.scrollFactor.set(1.1, 1);
 				hills.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(hills);
 				}
@@ -706,7 +706,7 @@ class PlayState extends MusicBeatState
 				bg2.antialiasing = true;
 				bg2.scrollFactor.set(1.2, 1);
 				bg2.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(bg2);
 				}
@@ -723,7 +723,7 @@ class PlayState extends MusicBeatState
 				bg.antialiasing = true;
 				bg.scrollFactor.set(1.3, 1);
 				bg.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(bg);
 				}
@@ -734,7 +734,7 @@ class PlayState extends MusicBeatState
 				eggman.scrollFactor.set(1.32, 1);
 				eggman.active = false;
 				
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(eggman);
 				}
@@ -744,7 +744,7 @@ class PlayState extends MusicBeatState
 				tail.antialiasing = true;
 				tail.scrollFactor.set(1.34, 1);
 				tail.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(tail);
 				}
@@ -754,7 +754,7 @@ class PlayState extends MusicBeatState
 				knuckle.antialiasing = true;
 				knuckle.scrollFactor.set(1.36, 1);
 				knuckle.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(knuckle);
 				}
@@ -765,7 +765,7 @@ class PlayState extends MusicBeatState
 				sticklol.antialiasing = true;
 				sticklol.scrollFactor.set(1.37, 1);
 				sticklol.active = false;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				add(sticklol);
 				}
@@ -923,7 +923,7 @@ class PlayState extends MusicBeatState
 					bg.antialiasing = true;
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
-					if (!FlxG.save.data.optimize)
+					#if !OPTIMIZE
 					{
 					add(bg);
 					}
@@ -934,7 +934,7 @@ class PlayState extends MusicBeatState
 					stageFront.antialiasing = true;
 					stageFront.scrollFactor.set(0.9, 0.9);
 					stageFront.active = false;
-					if (!FlxG.save.data.optimize)
+					#if !OPTIMIZE
 					{
 					add(stageFront);
 					}
@@ -945,7 +945,7 @@ class PlayState extends MusicBeatState
 					stageCurtains.antialiasing = true;
 					stageCurtains.scrollFactor.set(1.3, 1.3);
 					stageCurtains.active = false;
-					if (!FlxG.save.data.optimize)
+					#if !OPTIMIZE
 					{
 					add(stageCurtains);
 					}
@@ -1050,15 +1050,15 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 25;
 				dad.y += 200;
 				dad.x += 200;
-				if (!FlxG.save.data.optimize)
+				#if !OPTIMIZE
 				{
 				dad.scale.x = 1.1;
 				dad.scale.y = 1.1;
 				}
-				else
+				#else
       	{
-				dad.scale.x = 4.1;
-				dad.scale.y = 4.1;
+				dad.scale.x = 6.1;
+				dad.scale.y = 6.1;
 				}
 				dad.scrollFactor.set(1.37, 1);
 				boyfriend.scrollFactor.set(1.37, 1);
@@ -1102,7 +1102,7 @@ class PlayState extends MusicBeatState
       add(robloxtxt);
 		}
 		
-		if (!FlxG.save.data.optimize)
+		#if !OPTIMIZE
     {
 		  add(gf);
     }
@@ -1394,11 +1394,11 @@ class PlayState extends MusicBeatState
 			
 			daJumpscare = new FlxSprite(0,0);
 	
-			if (!FlxG.save.data.optimize)
+			#if !OPTIMIZE
 			{
 			daJumpscare.frames = Paths.getSparrowAtlas('jumpscare/sonicJUMPSCARE');
 			}
-			else
+			#else
       {
         daJumpscare.frames = Paths.getSparrowAtlas('opti_shitbox/sonicJUMPSCARE');
       }
@@ -1432,7 +1432,7 @@ class PlayState extends MusicBeatState
 				daJumpscare.alpha = 1;
 			}
 			
-			if (FlxG.save.data.optimize)
+			#if OPTIMIZE
 				{
 				daJumpscare.setGraphicSize(Std.int(daJumpscare.width * 6));
 				}

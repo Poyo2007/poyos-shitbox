@@ -22,12 +22,11 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCatagory> = [
 		new OptionCatagory("Gameplay", [
 		  #if mobileC
-		    new CustomControls("Edit Mobile Controls."),
+		  new CustomControls("Edit Mobile Controls."),
 		  #end
-		    new OptimizeOption("Makes the sprites low quality and removes the bg. Great for low quality pcs and phones."),
 			new DFJKOption(controls),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
-			#if !html
+			#if !html || !mobile
 			new FPSCapOption("Cap your FPS (Left for -10, Right for +10. SHIFT to go faster)"),
 			#end
 			new ScrollSpeedOption("Change your scroll speed (Left for -0.1, right for +0.1. If its at 1, it will be chart dependent)"),

@@ -32,12 +32,12 @@ class Character extends FlxSprite
 		{
 			case 'gf':
 				// GIRLFRIEND CODE
-        if (!FlxG.save.data.optimize)
+        #if OPTIMIZE
         {
 				tex = Paths.getSparrowAtlas('GF_assets');
 				frames = tex;
         }
-        else
+        #else
         {
         tex = Paths.getSparrowAtlas('opti_shitbox/GF_assets');
         frames = tex;
@@ -68,7 +68,7 @@ class Character extends FlxSprite
 				addOffset('hairFall', 0, -9);
 
 				addOffset('scared', -2, -17);
-				if (FlxG.save.data.optimize)
+				#if OPTIMIZE
 				{
 				  setGraphicSize(Std.int(width * 2));
 				}
@@ -253,7 +253,7 @@ class Character extends FlxSprite
 					animation.addByPrefix('singRIGHTmiss', 'Pico Note Right Miss', 24, false);
 					animation.addByPrefix('singLEFTmiss', 'Pico NOTE LEFT miss', 24, false);
 				}
-				else
+				#else
 				{
 					// Need to be flipped! REDO THIS LATER!
 					animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
@@ -280,12 +280,12 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf':
-			if (!FlxG.save.data.optimize)
+			#if OPTIMIZE
 			{
 				var tex = Paths.getSparrowAtlas('BOYFRIEND','shared');
 				frames = tex;
 			}
-			else
+			#else
       {
         var tex = Paths.getSparrowAtlas('opti_shitbox/BOYFRIEND','shared');
         frames = tex;
@@ -322,7 +322,7 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
-				if (FlxG.save.data.optimize)
+				#if OPTIMIZE
 				{
 				setGraphicSize(Std.int(width * 2));
 				}
@@ -332,12 +332,12 @@ class Character extends FlxSprite
 				flipX = true;
 	
 				case 'jamey':
-				if (!FlxG.save.data.optimize)
+				#if OPTIMIZE
 				{
 				var tex = Paths.getSparrowAtlas('shitbox/Jamey','shared');
 				frames = tex;
 				}
-				else
+				#else
         {
         var tex = Paths.getSparrowAtlas('opti_shitbox/Jamey','shared');
         frames = tex;
@@ -374,7 +374,7 @@ class Character extends FlxSprite
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
 				
-				if (FlxG.save.data.optimize)
+				#if OPTIMIZE
 				{
 				setGraphicSize(Std.int(width * 2));
 				}
@@ -404,12 +404,12 @@ class Character extends FlxSprite
 				
 				case 'sonic':
 				
-				if (!FlxG.save.data.optimize)
+				#if OPTIMIZE
         {
 				tex = Paths.getSparrowAtlas('shitbox/SonicAssets', 'shared');
 				frames = tex;
         }
-        else
+        #else
         {
         var tex = Paths.getSparrowAtlas('opti_shitbox/SonicAssets','shared');
         frames = tex;
@@ -435,7 +435,7 @@ class Character extends FlxSprite
 
 				addOffset("singDOWN-alt", 70, -27);
 				
-				if (FlxG.save.data.optimize)
+				#if OPTIMIZE
 				{
 				setGraphicSize(Std.int(width * 6));
 				}
@@ -443,12 +443,12 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 			case 'soul':
-			if (!FlxG.save.data.optimize)
+			#if OPTIMIZE
 			{
 				var tex = Paths.getSparrowAtlas('shitbox/soulbf','shared');
 				frames = tex;
 			}
-			else
+			#else
       {
       var tex = Paths.getSparrowAtlas('opti_shitbox/soulbf','shared');
       frames = tex;
@@ -488,7 +488,7 @@ class Character extends FlxSprite
 				
 				flipX = true;
 				
-				if (FlxG.save.data.optimize)
+				#if OPTIMIZE
 				{
 				
 				setGraphicSize(Std.int(width * 2));
@@ -497,12 +497,12 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 			case 'hd':
-			if (!FlxG.save.data.optimize)
+			#if OPTIMIZE
 			{
 				var tex = Paths.getSparrowAtlas('shitbox/144p','shared');
 				frames = tex;
 			}
-			else
+			#else
       {
       var tex = Paths.getSparrowAtlas('opti_shitbox/144p','shared');
       frames = tex;
@@ -520,7 +520,7 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -9, 15);
 				addOffset("singDOWN", 0, -24);
 				
-				if (FlxG.save.data.optimize)
+				#if OPTIMIZE
 				{
 				
 				setGraphicSize(Std.int(width * 2));
@@ -529,12 +529,12 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 				case 'mrfunky':
-			if (!FlxG.save.data.optimize)
+			#if OPTIMIZE
 			{
 				var tex = Paths.getSparrowAtlas('shitbox/nyan','shared');
 				frames = tex;
 			}
-			else
+			#else
       {
       var tex = Paths.getSparrowAtlas('opti_shitbox/nyan','shared');
       frames = tex;
@@ -552,7 +552,7 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -104, -30);
 				addOffset("singDOWN", 80, -40);
 				
-				if (FlxG.save.data.optimize)
+				#if OPTIMIZE
 				{
 				
 				setGraphicSize(Std.int(width * 2));
