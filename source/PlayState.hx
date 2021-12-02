@@ -1045,14 +1045,11 @@ class PlayState extends MusicBeatState
 
 		add(dad);
 		add(boyfriend);
-		#if OPTIMIZE
+		#if !OPTIMIZE
 		switch (curStage) // This for layering lmao
 			{
 				case 'SONICstage':
 					add(bgspec);
-				case 'sonicFUNSTAGE':
-					add(funboppers1ANIM);
-					add(funboppers2ANIM);
 			}
 		#end
 
