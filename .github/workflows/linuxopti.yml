@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Linux Build CI
+name: Optimized Linux Build CI
 
 # Controls when the workflow will run
 on: [workflow_dispatch, push, pull_request]
@@ -47,9 +47,9 @@ jobs:
           haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit.git
           haxelib install actuate 
           haxelib list
-          haxelib run lime build linux -DOPTIMIZE
+          haxelib run lime build linux -DOP
           
       - uses: actions/upload-artifact@v2
         with:
-          name: Linux Build
+          name: Linux Build OPTIMIZE
           path: export/release/linux/bin
