@@ -1034,7 +1034,7 @@ class PlayState extends MusicBeatState
 		
 		#if !OPTIMIZE
     {
-      if (!curStage == 'chaos')
+      if (SONG.song.toLowerCase == 'chaos')
 		  add(gf);
     }
     #end
