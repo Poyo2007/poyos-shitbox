@@ -853,6 +853,7 @@ class PlayState extends MusicBeatState
 					{
 					add(bg);
 					}
+					#end
 
 					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
 					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
@@ -864,6 +865,7 @@ class PlayState extends MusicBeatState
 					{
 					add(stageFront);
 					}
+					#end
 
 					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
 					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
@@ -875,6 +877,7 @@ class PlayState extends MusicBeatState
 					{
 					add(stageCurtains);
 					}
+					#end
 			}
 		}
 
