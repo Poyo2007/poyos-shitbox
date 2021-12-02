@@ -986,6 +986,7 @@ class PlayState extends MusicBeatState
 				dad.scale.x = 6.1;
 				dad.scale.y = 6.1;
 				}
+				#end
 				dad.scrollFactor.set(1.37, 1);
 				boyfriend.scrollFactor.set(1.37, 1);
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y - 100);
