@@ -255,7 +255,7 @@ class Character extends FlxSprite
 					animation.addByPrefix('singRIGHTmiss', 'Pico Note Right Miss', 24, false);
 					animation.addByPrefix('singLEFTmiss', 'Pico NOTE LEFT miss', 24, false);
 				}
-				#else
+				else
 				{
 					// Need to be flipped! REDO THIS LATER!
 					animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
