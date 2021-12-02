@@ -42,6 +42,7 @@ class Character extends FlxSprite
         tex = Paths.getSparrowAtlas('opti_shitbox/GF_assets');
         frames = tex;
         }
+        #end
 				
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
@@ -72,6 +73,7 @@ class Character extends FlxSprite
 				{
 				  setGraphicSize(Std.int(width * 2));
 				}
+				#end
 
 				playAnim('danceRight');
 
@@ -290,6 +292,7 @@ class Character extends FlxSprite
         var tex = Paths.getSparrowAtlas('opti_shitbox/BOYFRIEND','shared');
         frames = tex;
       }
+      #end
 				
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
@@ -326,6 +329,7 @@ class Character extends FlxSprite
 				{
 				setGraphicSize(Std.int(width * 2));
 				}
+				#end
 
 				playAnim('idle');
 
@@ -342,6 +346,7 @@ class Character extends FlxSprite
         var tex = Paths.getSparrowAtlas('opti_shitbox/Jamey','shared');
         frames = tex;
         }
+        #end
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
 				animation.addByPrefix('singLEFT', 'BF NOTE RIGHT0', 24, false);
@@ -378,6 +383,7 @@ class Character extends FlxSprite
 				{
 				setGraphicSize(Std.int(width * 2));
 				}
+				#end
 
 				playAnim('idle');
 
@@ -414,6 +420,7 @@ class Character extends FlxSprite
         var tex = Paths.getSparrowAtlas('opti_shitbox/SonicAssets','shared');
         frames = tex;
         }
+        #end
 				
 				animation.addByPrefix('idle', 'SONICmoveIDLE', 24);
 				animation.addByPrefix('singUP', 'SONICmoveUP', 24);
@@ -439,6 +446,7 @@ class Character extends FlxSprite
 				{
 				setGraphicSize(Std.int(width * 6));
 				}
+				#end
 	
 				playAnim('idle');
 				
@@ -453,6 +461,7 @@ class Character extends FlxSprite
       var tex = Paths.getSparrowAtlas('opti_shitbox/soulbf','shared');
       frames = tex;
       }
+      #end
 				
 				animation.addByPrefix('idle', 'BF idle dance instance 1', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP instance 1', 24, false);
@@ -493,6 +502,7 @@ class Character extends FlxSprite
 				
 				setGraphicSize(Std.int(width * 2));
 				}
+				#end
 
 				playAnim('idle');
 				
@@ -507,6 +517,7 @@ class Character extends FlxSprite
       var tex = Paths.getSparrowAtlas('opti_shitbox/144p','shared');
       frames = tex;
       }
+      #end
 				
 				animation.addByPrefix('idle', 'Dad idle dance', 24, false);
 				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24, false);
@@ -525,6 +536,7 @@ class Character extends FlxSprite
 				
 				setGraphicSize(Std.int(width * 2));
 				}
+				#end
 
 				playAnim('idle');
 				
@@ -539,6 +551,7 @@ class Character extends FlxSprite
       var tex = Paths.getSparrowAtlas('opti_shitbox/nyan','shared');
       frames = tex;
       }
+      #end
 				
 				animation.addByPrefix('idle', 'Cat_Idle', 24, false);
 				animation.addByPrefix('singUP', 'Cat_Up', 24, false);
@@ -557,6 +570,7 @@ class Character extends FlxSprite
 				
 				setGraphicSize(Std.int(width * 2));
 				}
+				#end
 
 				playAnim('idle');
 

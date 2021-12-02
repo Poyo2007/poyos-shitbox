@@ -224,6 +224,7 @@ class PlayState extends MusicBeatState
       {
         daJumpscare.frames = Paths.getSparrowAtlas('opti_shitbox/sonicJUMPSCARE');
       }
+      #end
       
 			daJumpscare.animation.addByPrefix('jump','sonicSPOOK',24, false);
 			daJumpscare.animation.play('jump');
@@ -231,6 +232,7 @@ class PlayState extends MusicBeatState
 				{
 				daJumpscare.setGraphicSize(Std.int(daJumpscare.width * 6));
 				}
+				#end
 			add(daJumpscare);
 			
 			
@@ -519,6 +521,7 @@ class PlayState extends MusicBeatState
 				{
 				add(sSKY);
 				}
+				#end
 
 				var hills:FlxSprite = new FlxSprite(-264, -156 + 150).loadGraphic(Paths.image('PolishedP1/HILLS'));
 				hills.antialiasing = true;
@@ -528,6 +531,7 @@ class PlayState extends MusicBeatState
 				{
 				add(hills);
 				}
+				#end
 
 				var bg2:FlxSprite = new FlxSprite(-355, -289 + 150).loadGraphic(Paths.image('PolishedP1/FLOOR2'));
 				bg2.updateHitbox();
@@ -538,6 +542,7 @@ class PlayState extends MusicBeatState
 				{
 				add(bg2);
 				}
+				#end
 
 				bgspec = new FlxSprite(-355, -289 + 120);
 				bgspec.updateHitbox();
@@ -555,6 +560,7 @@ class PlayState extends MusicBeatState
 				{
 				add(bg);
 				}
+				#end
 
 				var eggman:FlxSprite = new FlxSprite(-218, -219 + 150).loadGraphic(Paths.image('PolishedP1/EGGMAN'));
 				eggman.updateHitbox();
@@ -566,6 +572,7 @@ class PlayState extends MusicBeatState
 				{
 				add(eggman);
 				}
+				#end
 
 				var tail:FlxSprite = new FlxSprite(-199 - 150, -259 + 150).loadGraphic(Paths.image('PolishedP1/TAIL'));
 				tail.updateHitbox();
@@ -576,6 +583,7 @@ class PlayState extends MusicBeatState
 				{
 				add(tail);
 				}
+				#end
 
 				var knuckle:FlxSprite = new FlxSprite(185 + 100, -350 + 150).loadGraphic(Paths.image('PolishedP1/KNUCKLE'));
 				knuckle.updateHitbox();
@@ -586,6 +594,7 @@ class PlayState extends MusicBeatState
 				{
 				add(knuckle);
 				}
+				#end
 				
 
 				var sticklol:FlxSprite = new FlxSprite(-200, -240).loadGraphic(Paths.image('PolishedP1/STICKLOL'));
@@ -597,6 +606,7 @@ class PlayState extends MusicBeatState
 				{
 				add(sticklol);
 				}
+				#end
 
 
 				}
@@ -617,6 +627,7 @@ class PlayState extends MusicBeatState
 						{
 						add(wall);
 						}
+						#end
 
 						floor = new FlxSprite(-2349, 921.25);
 						floor.antialiasing = true;
@@ -624,6 +635,7 @@ class PlayState extends MusicBeatState
 						{
 						add(floor);
 						}
+						#end
 						floor.frames = Paths.getSparrowAtlas('Chamber/Floor');
 						floor.animation.addByPrefix('a', 'floor blue');
 						floor.animation.addByPrefix('b', 'floor yellow');
@@ -636,6 +648,7 @@ class PlayState extends MusicBeatState
 						{
 						add(fleetwaybgshit);
 						}
+						#end
 						fleetwaybgshit.frames = Paths.getSparrowAtlas('Chamber/FleetwayBGshit');
 						fleetwaybgshit.animation.addByPrefix('a', 'BGblue');
 						fleetwaybgshit.animation.addByPrefix('b', 'BGyellow');
@@ -655,6 +668,14 @@ class PlayState extends MusicBeatState
             {
 						add(emeraldbeam);
             }
+            #end
+            
+            thechamber = new FlxSprite(-225.05, 463.9);
+						thechamber.frames = Paths.getSparrowAtlas('Chamber/The Chamber');
+						thechamber.animation.addByPrefix('a', 'Chamber Sonic Fall', 24, false);
+						thechamber.scrollFactor.set(1.1, 1);
+						thechamber.antialiasing = true;
+						add(thechamber);
 
 						var emeralds:FlxSprite = new FlxSprite(326.6, -191.75);
 						emeralds.antialiasing = true;
@@ -667,6 +688,7 @@ class PlayState extends MusicBeatState
 						{
 						add(emeralds);
 						}
+						#end
 
 						porker = new FlxSprite(2880.15, -762.8);
 						porker.frames = Paths.getSparrowAtlas('Chamber/Porker Lewis');
@@ -676,102 +698,6 @@ class PlayState extends MusicBeatState
 						porker.antialiasing = true;
 						
 					}
-			case 'you-cant-run':
-				{
-				defaultCamZoom = 1.0;
-				curStage = 'SONICstagerun';
-
-
-
-				var sSKY:FlxSprite = new FlxSprite(-222, -16 + 150).loadGraphic(Paths.image('PolishedP1/SKY'));
-				sSKY.antialiasing = true;
-				sSKY.scrollFactor.set(2, 2);
-				sSKY.active = false;
-				#if !OPTIMIZE
-				{
-				add(sSKY);
-				}
-
-				var hills:FlxSprite = new FlxSprite(-264, -156 + 150).loadGraphic(Paths.image('PolishedP1/HILLS'));
-				hills.antialiasing = true;
-				hills.scrollFactor.set(1.1, 1);
-				hills.active = false;
-				#if !OPTIMIZE
-				{
-				add(hills);
-				}
-
-				var bg2:FlxSprite = new FlxSprite(-355, -289 + 150).loadGraphic(Paths.image('PolishedP1/FLOOR2'));
-				bg2.updateHitbox();
-				bg2.antialiasing = true;
-				bg2.scrollFactor.set(1.2, 1);
-				bg2.active = false;
-				#if !OPTIMIZE
-				{
-				add(bg2);
-				}
-
-				bgspec = new FlxSprite(-355, -289 + 120);
-				bgspec.updateHitbox();
-				bgspec.antialiasing = true;
-				bgspec.scrollFactor.set(1, 1);
-				bgspec.active = false;
-				
-
-
-				var bg:FlxSprite = new FlxSprite(-297, -246 + 150).loadGraphic(Paths.image('PolishedP1/FLOOR1'));
-				bg.antialiasing = true;
-				bg.scrollFactor.set(1.3, 1);
-				bg.active = false;
-				#if !OPTIMIZE
-				{
-				add(bg);
-				}
-
-				var eggman:FlxSprite = new FlxSprite(-218, -219 + 150).loadGraphic(Paths.image('PolishedP1/EGGMAN'));
-				eggman.updateHitbox();
-				eggman.antialiasing = true;     
-				eggman.scrollFactor.set(1.32, 1);
-				eggman.active = false;
-				
-				#if !OPTIMIZE
-				{
-				add(eggman);
-				}
-
-				var tail:FlxSprite = new FlxSprite(-199 - 150, -259 + 150).loadGraphic(Paths.image('PolishedP1/TAIL'));
-				tail.updateHitbox();
-				tail.antialiasing = true;
-				tail.scrollFactor.set(1.34, 1);
-				tail.active = false;
-				#if !OPTIMIZE
-				{
-				add(tail);
-				}
-
-				var knuckle:FlxSprite = new FlxSprite(185 + 100, -350 + 150).loadGraphic(Paths.image('PolishedP1/KNUCKLE'));
-				knuckle.updateHitbox();
-				knuckle.antialiasing = true;
-				knuckle.scrollFactor.set(1.36, 1);
-				knuckle.active = false;
-				#if !OPTIMIZE
-				{
-				add(knuckle);
-				}
-				
-
-				var sticklol:FlxSprite = new FlxSprite(-200, -240).loadGraphic(Paths.image('PolishedP1/STICKLOL'));
-				sticklol.updateHitbox();
-				sticklol.antialiasing = true;
-				sticklol.scrollFactor.set(1.37, 1);
-				sticklol.active = false;
-				#if !OPTIMIZE
-				{
-				add(sticklol);
-				}
-
-
-				}
 			case 'winter-horrorland':
 			{
 					curStage = 'mallEvil';
@@ -1096,16 +1022,18 @@ class PlayState extends MusicBeatState
       robloxtxt = new FlxText();
       robloxtxt.text = "drippy";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 50);
-      robloxtxt.scrollFactor.set(0.9, 0.9);
-      robloxtxt.y = dad.y + -40;
-      robloxtxt.x = dad.x + -20;
+      robloxtxt.scrollFactor.set(0.8, 0.8);
+      robloxtxt.y = dad.y + -80;
+      robloxtxt.x = dad.x;
       add(robloxtxt);
 		}
 		
 		#if !OPTIMIZE
     {
+      if (!curStage == 'chaos')
 		  add(gf);
     }
+    #end
 
 		// Shitty layering but whatev it works LOL
 		if (curStage == 'limo')
@@ -1113,6 +1041,16 @@ class PlayState extends MusicBeatState
 
 		add(dad);
 		add(boyfriend);
+		#if OPTIMIZE
+		switch (curStage) // This for layering lmao
+			{
+				case 'SONICstage':
+					add(bgspec);
+				case 'sonicFUNSTAGE':
+					add(funboppers1ANIM);
+					add(funboppers2ANIM);
+			}
+		#end
 
 		var doof:DialogueBox = new DialogueBox(false, dialogue);
 		// doof.x += 70;
@@ -1402,6 +1340,7 @@ class PlayState extends MusicBeatState
       {
         daJumpscare.frames = Paths.getSparrowAtlas('opti_shitbox/sonicJUMPSCARE');
       }
+      #end
 			daJumpscare.animation.addByPrefix('jump','sonicSPOOK',24, false);
 			
 			daJumpscare.screenCenter();
@@ -1436,6 +1375,7 @@ class PlayState extends MusicBeatState
 				{
 				daJumpscare.setGraphicSize(Std.int(daJumpscare.width * 6));
 				}
+			#end
 			add(daJumpscare);
 
 			daJumpscare.animation.play('jump');
