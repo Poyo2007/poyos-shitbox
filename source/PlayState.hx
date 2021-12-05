@@ -676,7 +676,7 @@ class PlayState extends MusicBeatState
 			case 'bf':
 			  boyfriend.y += 350;
 			case 'jamey':
-			  boyfriend.y += 350;
+			  boyfriend.y += 350!
 		}
 
 		// REPOSITIONING PER STAGE
@@ -1038,7 +1038,7 @@ class PlayState extends MusicBeatState
 					new FlxTimer().start(3, function(tmr:FlxTimer)
 					{
 					  startCountdown();
-					}
+					});
 
 				default:
 					startCountdown();
