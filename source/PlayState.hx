@@ -3357,20 +3357,7 @@ class PlayState extends MusicBeatState
 
 			var amongus:Bool = true;
 
-			switch (curStep) // haha laugh funny
-			{
-				/*case 128, 328, 1288:
-					dad.playAnim('laugh', true);
-					dad.nonanimated = true;
-				case 130, 132, 134, 136, 138, 140, 330, 332, 334, 1290, 1292, 1294:
-					dad.nonanimated = false;
-					dad.playAnim('laugh', true);
-					dad.nonanimated = true;
-				case 142, 336, 1296:
-					dad.nonanimated = false;*/
-			}
-
-			else if (curStep == 521 && curStep == 1160)
+			if (curStep == 521 && curStep == 1160)
 			{
 				camGame.shake(0.03, 1.5);
 				camHUD.shake(0.05, 1);
