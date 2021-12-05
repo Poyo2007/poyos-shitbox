@@ -674,9 +674,9 @@ class PlayState extends MusicBeatState
 			case 'poyo':
 			  boyfriend.y += 100;
 			case 'bf':
-			  boyfriend.y += 350
+			  boyfriend.y += 350;
 			case 'jamey':
-			  boyfriend.y += 350
+			  boyfriend.y += 350;
 		}
 
 		// REPOSITIONING PER STAGE
