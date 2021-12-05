@@ -3350,7 +3350,7 @@ class PlayState extends MusicBeatState
 			}
 		if (curSong == 'you-cant-run')
 		{
-			var vg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('RedVG', 'exe'));
+			var vg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('RedVG'));
 			vg.alpha = 0;
 			vg.cameras = [camHUD];
 			add(vg);

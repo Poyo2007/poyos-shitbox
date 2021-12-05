@@ -69,11 +69,6 @@ class Character extends FlxSprite
 				addOffset('hairFall', 0, -9);
 
 				addOffset('scared', -2, -17);
-				#if !OPTIMIZE
-				{
-				  setGraphicSize(Std.int(width * 2));
-				}
-				#end
 
 				playAnim('danceRight');
 
@@ -313,8 +308,10 @@ class Character extends FlxSprite
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
-				addOffset("singRIGHT", -38, -7);
-				addOffset("singLEFT", 12, -6);
+				addOffset("singRIGHT", 12, -6);
+				addOffset("singLEFT", -38, -7);
+				//addOffset("singRIGHT", -38, -7);
+				//addOffset("singLEFT", 12, -6);
 				addOffset("singDOWN", -10, -50);
 				addOffset("singUPmiss", -29, 27);
 				addOffset("singRIGHTmiss", -30, 21);
@@ -325,11 +322,6 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
-				#if !OPTIMIZE
-				{
-				setGraphicSize(Std.int(width * 2));
-				}
-				#end
 
 				playAnim('idle');
 
@@ -366,8 +358,10 @@ class Character extends FlxSprite
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
-				addOffset("singRIGHT", -38, -7);
-				addOffset("singLEFT", 12, -6);
+				addOffset("singRIGHT", 12, -6);
+				addOffset("singLEFT", -38, -7);
+				//addOffset("singRIGHT", -38, -7);
+				//addOffset("singLEFT", 12, -6);
 				addOffset("singDOWN", -10, -50);
 				addOffset("singUPmiss", -29, 27);
 				addOffset("singRIGHTmiss", -30, 21);
@@ -378,12 +372,6 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
-				
-				#if !OPTIMIZE
-				{
-				setGraphicSize(Std.int(width * 2));
-				}
-				#end
 
 				playAnim('idle');
 
@@ -441,12 +429,6 @@ class Character extends FlxSprite
 				addOffset("singLAUGH", 83, -33);
 
 				addOffset("singDOWN-alt", 70, -27);
-				
-				#if !OPTIMIZE
-				{
-				setGraphicSize(Std.int(width * 6));
-				}
-				#end
 	
 				playAnim('idle');
 				
@@ -496,13 +478,6 @@ class Character extends FlxSprite
 				addOffset('scared', -4);
 				
 				flipX = true;
-				
-				#if !OPTIMIZE
-				{
-				
-				setGraphicSize(Std.int(width * 2));
-				}
-				#end
 
 				playAnim('idle');
 				
