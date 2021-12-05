@@ -344,9 +344,8 @@ class PlayState extends MusicBeatState
 
 		switch(SONG.song.toLowerCase())
 		{
-			#if !OPTIMIZE
 		  case 'left-unchecked':
-				{
+			{
 				defaultCamZoom = 1.0;
 				curStage = 'SONICstage';
 
@@ -417,7 +416,7 @@ class PlayState extends MusicBeatState
 
 				}
 			case 'chaos': // fleetway my beloved
-					{
+			{
 					  
 						defaultCamZoom = .7;
 						curStage = 'chamber';
@@ -485,6 +484,55 @@ class PlayState extends MusicBeatState
 						porker.antialiasing = true;
 	
 					}
+			case 'you-cant-run': // i fixed the bgs and shit!!! - razencro part 1
+			{
+						defaultCamZoom = .9;
+						curStage = 'SONICexestage';
+
+						var sSKY:FlxSprite = new FlxSprite(-414, -440.8).loadGraphic(Paths.image('SonicP2/sky'));
+						sSKY.antialiasing = true;
+						sSKY.scrollFactor.set(1, 1);
+						sSKY.active = false;
+						sSKY.scale.x = 1.4;
+						sSKY.scale.y = 1.4;
+						add(sSKY);
+
+						var trees:FlxSprite = new FlxSprite(-290.55, -298.3).loadGraphic(Paths.image('SonicP2/backtrees'));
+						trees.antialiasing = true;
+						trees.scrollFactor.set(1.1, 1);
+						trees.active = false;
+						trees.scale.x = 1.2;
+						trees.scale.y = 1.2;
+						add(trees);
+
+						var bg2:FlxSprite = new FlxSprite(-306, -334.65).loadGraphic(Paths.image('SonicP2/trees'));
+						bg2.updateHitbox();
+						bg2.antialiasing = true;
+						bg2.scrollFactor.set(1.2, 1);
+						bg2.active = false;
+						bg2.scale.x = 1.2;
+						bg2.scale.y = 1.2;
+						add(bg2);
+
+						var bg:FlxSprite = new FlxSprite(-309.95, -240.2).loadGraphic(Paths.image('SonicP2/ground'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(1.3, 1);
+						bg.active = false;
+						bg.scale.x = 1.2;
+						bg.scale.y = 1.2;
+						add(bg);
+						
+						//PIXEL TRANSITION
+
+						bgspec = new FlxSprite(-428.5 + 50 + 700, -449.35 + 25 + 392 + 105 + 50).loadGraphic(Paths.image("SonicP2/GreenHill"));
+						bgspec.antialiasing = false;
+						bgspec.scrollFactor.set(1, 1);
+						bgspec.active = false;
+						bgspec.visible = false;
+						bgspec.scale.x = 8;
+						bgspec.scale.y = 8;
+						add(bgspec);
+					}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -511,18 +559,6 @@ class PlayState extends MusicBeatState
 					stageCurtains.active = false;
 					add(stageCurtains);
 			}
-#else
-  case 'left-unchecked' | 'chaos' | 'ectospasm' | 'you-cant-run':
-			{
-					defaultCamZoom = 0.9;
-					curStage = 'stage';
-					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('bg'));
-					//omg blank
-					bg.antialiasing = true;
-					bg.scrollFactor.set(0.9, 0.9);
-					bg.active = false;
-			}
-			#end
 }
 
 		var gfVersion:String = 'gf';
@@ -594,7 +630,54 @@ class PlayState extends MusicBeatState
 
 
 		
-		boyfriend = new Boyfriend(770, 450, SONG.player1);
+		boyfriend = new Boyfriend(770, 100, SONG.player1);
+		
+		switch (SONG.player1)
+		{
+			case 'gf':
+				boyfriend.setPosition(gf.x, gf.y);
+				gf.visible = false;
+				if (isStoryMode)
+				{
+					camPos.x += 600;
+					tweenCamIn();
+				}
+
+			case "spooky":
+				boyfriend.y += 200;
+			case "monster":
+				boyfriend.y += 100;
+			case 'monster-christmas':
+				boyfriend.y += 130;
+			case 'dad':
+				camPos.x += 400;
+			case 'pico':
+				camPos.x += 600;
+				boyfriend.y += 300;
+			case 'parents-christmas':
+				boyfriend.x -= 500;
+			case 'senpai':
+				boyfriend.x += 150;
+				boyfriend.y += 360;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'senpai-angry':
+				boyfriend.x += 150;
+				boyfriend.y += 360;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'spirit':
+				boyfriend.x -= 150;
+				boyfriend.y += 100;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'sonic':
+				boyfriend.x -= 130;
+				boyfriend.y += -50;
+			case 'poyo':
+			  boyfriend.y += 100;
+			case 'bf':
+			  boyfriend.y += 350
+			case 'jamey':
+			  boyfriend.y += 350
+		}
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
@@ -930,27 +1013,32 @@ class PlayState extends MusicBeatState
 				
 				//SAVING FOR LATER
         case 'you-cant-run':
-				add(blackFuck);
-				startCircle.loadGraphic(Paths.image('StartScreens/CircleTooSlow', 'shared'));
-				startCircle.x += 777;
-				add(startCircle);
-				startText.loadGraphic(Paths.image('StartScreens/TextTooSlow', 'shared'));
-				startText.x -= 1200;
-				add(startText);
 
-				new FlxTimer().start(0.6, function(tmr:FlxTimer)
-				{
-					FlxTween.tween(startCircle, {x: 0}, 0.5);
-					FlxTween.tween(startText, {x: 0}, 0.5);
-				});
-				
-				new FlxTimer().start(1.9, function(tmr:FlxTimer)
-				{
-					FlxTween.tween(startCircle, {alpha: 0}, 1);
-					FlxTween.tween(startText, {alpha: 0}, 1);
-					FlxTween.tween(blackFuck, {alpha: 0}, 1);
-				});
-				startCountdown();
+					add(blackFuck);
+					startCircle.loadGraphic(Paths.image('StartScreens/CircleYouCantRun', 'shared'));
+					startCircle.x += 777;
+					add(startCircle);
+					startText.loadGraphic(Paths.image('StartScreens/TextYouCantRun', 'shared'));
+					startText.x -= 1200;
+					add(startText);
+
+					new FlxTimer().start(0.6, function(tmr:FlxTimer)
+					{
+						FlxTween.tween(startCircle, {x: 0}, 0.5);
+						FlxTween.tween(startText, {x: 0}, 0.5);
+					});
+
+					new FlxTimer().start(1.9, function(tmr:FlxTimer)
+					{
+						FlxTween.tween(startCircle, {alpha: 0}, 1);
+						FlxTween.tween(startText, {alpha: 0}, 1);
+						FlxTween.tween(blackFuck, {alpha: 0}, 1);
+					});
+					
+					new FlxTimer().start(3, function(tmr:FlxTimer)
+					{
+					  startCountdown();
+					}
 
 				default:
 					startCountdown();
@@ -3128,11 +3216,11 @@ class PlayState extends MusicBeatState
 						case 2:
 							boyfriend.playAnim('singUP', true);
 						case 3:
-							boyfriend.playAnim('singRIGHT', true);
+							boyfriend.playAnim('singLEFT', true);
 						case 1:
 							boyfriend.playAnim('singDOWN', true);
 						case 0:
-							boyfriend.playAnim('singLEFT', true);
+							boyfriend.playAnim('singRIGHT', true);
 					}
 		
 					if (!loadRep)
@@ -3260,6 +3348,65 @@ class PlayState extends MusicBeatState
 					doJumpscare(1,1);
 				}
 			}
+		if (curSong == 'you-cant-run')
+		{
+			var vg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('RedVG', 'exe'));
+			vg.alpha = 0;
+			vg.cameras = [camHUD];
+			add(vg);
+
+			var amongus:Bool = true;
+
+			switch (curStep) // haha laugh funny
+			{
+				/*case 128, 328, 1288:
+					dad.playAnim('laugh', true);
+					dad.nonanimated = true;
+				case 130, 132, 134, 136, 138, 140, 330, 332, 334, 1290, 1292, 1294:
+					dad.nonanimated = false;
+					dad.playAnim('laugh', true);
+					dad.nonanimated = true;
+				case 142, 336, 1296:
+					dad.nonanimated = false;*/
+			}
+
+			else if (curStep == 521 && curStep == 1160)
+			{
+				camGame.shake(0.03, 1.5);
+				camHUD.shake(0.05, 1);
+			}
+			else if (curStep == 80 || curStep == 785) // MaliciousBunny did this
+			{
+				new FlxTimer().start(.085, function(sex:FlxTimer)
+				{
+					if (curStep >= 528 && curStep <= 784)
+						vg.visible = false;
+					else
+						vg.visible = true;
+
+					if (!paused)
+						vg.alpha += 0.1;
+					if (vg.alpha < 1)
+					{
+						sex.reset();
+					}
+					if (vg.alpha == 1)
+					{
+						new FlxTimer().start(.085, function(sex2:FlxTimer)
+						{
+							if (!paused)
+								vg.alpha -= 0.1;
+							if (vg.alpha > 0)
+							{
+								sex2.reset();
+							}
+							if (vg.alpha == 0)
+								sex.reset();
+						});
+					}
+				});
+			}
+		}
 
 		if (dad.curCharacter == 'spooky' && curStep % 4 == 2)
 		{
