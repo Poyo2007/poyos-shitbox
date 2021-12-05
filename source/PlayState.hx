@@ -626,6 +626,10 @@ class PlayState extends MusicBeatState
 				dad.y += -50;
 			case 'poyo':
 			  dad.y += 100;
+			case 'bf':
+			  dad.y += 300;
+			case 'jamey':
+			  dad.y += 300;
 		}
 
 
@@ -674,9 +678,9 @@ class PlayState extends MusicBeatState
 			case 'poyo':
 			  boyfriend.y += 100;
 			case 'bf':
-			  boyfriend.y += 350;
+			  boyfriend.y += 300;
 			case 'jamey':
-			  boyfriend.y += 350;
+			  boyfriend.y += 300;
 		}
 
 		// REPOSITIONING PER STAGE
@@ -753,7 +757,7 @@ class PlayState extends MusicBeatState
       robloxtxt = new FlxText();
       robloxtxt.text = "drippy";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 50);
-      robloxtxt.scrollFactor.set(0.8, 0.8);
+      robloxtxt.scrollFactor.set(0.85, 0.85);
       robloxtxt.y = dad.y + -80;
       robloxtxt.x = dad.x;
       add(robloxtxt);
