@@ -583,7 +583,7 @@ class PlayState extends MusicBeatState
 		gf.scrollFactor.set(0.95, 0.95);
 
 		dad = new Character(100, 100, SONG.player2);
-		if (curCharacter == 'poyoandjamey')
+		if (dad.dad.curCharacter == 'poyoandjamey')
 		{
 		jamey = new Character(100, 450, 'jamey');
 		}
@@ -782,7 +782,7 @@ class PlayState extends MusicBeatState
 			add(limo);
 
 		add(dad);
-		if (curCharacter == 'poyoandjamey')
+		if (dad.dad.curCharacter == 'poyoandjamey')
 		{
 		add(jamey);
 		}
@@ -2219,7 +2219,7 @@ class PlayState extends MusicBeatState
 						    health -= 0.01;
 					  	}
 								dad.playAnim('singUP' + altAnim, true);
-								if (curCharacter == 'poyoandjamey')
+								if (dad.curCharacter == 'poyoandjamey')
 								{
 								  jamey.playAnim('singUP' + altAnim, true);
 								}
@@ -2229,7 +2229,7 @@ class PlayState extends MusicBeatState
 						    health -= 0.01;
 					  	}
 								dad.playAnim('singRIGHT' + altAnim, true);
-								if (curCharacter == 'poyoandjamey')
+								if (dad.curCharacter == 'poyoandjamey')
 								{
 								  jamey.playAnim('singRIGHT' + altAnim, true);
 								}
@@ -2239,7 +2239,7 @@ class PlayState extends MusicBeatState
 						    health -= 0.01;
 					  	}
 								dad.playAnim('singDOWN' + altAnim, true);
-						  if (curCharacter == 'poyoandjamey')
+						  if (dad.curCharacter == 'poyoandjamey')
 								{
 								  jamey.playAnim('singDOWN' + altAnim, true);
 								}
@@ -2249,7 +2249,7 @@ class PlayState extends MusicBeatState
 						    health -= 0.01;
 					  	}
 								dad.playAnim('singLEFT' + altAnim, true);
-							if (curCharacter == 'poyoandjamey')
+							if (dad.curCharacter == 'poyoandjamey')
 								{
 								  jamey.playAnim('singLEFT' + altAnim, true);
 								}
