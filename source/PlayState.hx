@@ -86,6 +86,7 @@ class PlayState extends MusicBeatState
 	private var vocals:FlxSound;
 
 	private var dad:Character;
+	private var jamey:Character;
 	private var gf:Character;
 	private var boyfriend:Boyfriend;
 
@@ -582,6 +583,10 @@ class PlayState extends MusicBeatState
 		gf.scrollFactor.set(0.95, 0.95);
 
 		dad = new Character(100, 100, SONG.player2);
+		if (curCharacter == 'poyoandjamey')
+		{
+		jamey = new Character(100, 450, 'jamey');
+		}
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
@@ -631,10 +636,14 @@ class PlayState extends MusicBeatState
 			case 'jamey':
 			  dad.y += 300;
 		}
-
-
-		
+		if (!curCharacter == 'bf')
+		{
 		boyfriend = new Boyfriend(770, 100, SONG.player1);
+		}
+		else
+    {
+    boyfriend = new Boyfriend(770, 450, SONG.player1);
+    }
 		
 		switch (SONG.player1)
 		{
@@ -677,8 +686,6 @@ class PlayState extends MusicBeatState
 				boyfriend.y += -50;
 			case 'poyo':
 			  boyfriend.y += 100;
-			case 'bf':
-			  boyfriend.y += 300;
 			case 'jamey':
 			  boyfriend.y += 300;
 		}
@@ -748,7 +755,7 @@ class PlayState extends MusicBeatState
 				gf.y += 300;
 		}
 		
-		if (dad.curCharacter == 'poyo')
+		if (dad.curCharacter == 'poyo' || 'poyoandjamey')
 		{
 		  var robloxtxt:FlxText;
 			var wordWrap:Bool = false;
@@ -775,6 +782,10 @@ class PlayState extends MusicBeatState
 			add(limo);
 
 		add(dad);
+		if (curCharacter == 'poyoandjamey')
+		{
+		add(jamey);
+		}
 		add(boyfriend);
 		#if !OPTIMIZE
 		switch (curStage) // This for layering lmao
@@ -870,7 +881,7 @@ class PlayState extends MusicBeatState
 		add(healthBar);
 
 		// Add Kade Engine watermark
-		var kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + (storyDifficulty == 2 ? "Hard" : storyDifficulty == 1 ? "Normal" : "Easy") + " - KE " + MainMenuState.kadeEngineVer + " - " + (FlxG.save.data.etternaMode ? "E.Mode" : "FNF"), 16);
+		var kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + " - shitbox " + " - " + (FlxG.save.data.etternaMode ? "E.Mode" : "FNF"), 16);
 		kadeEngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		kadeEngineWatermark.scrollFactor.set();
 		add(kadeEngineWatermark);
@@ -992,7 +1003,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
-				case 'nchecked':
+				case 'left-unchecked':
 				add(blackFuck);
 				startCircle.loadGraphic(Paths.image('StartScreens/CircleTooSlow', 'shared'));
 				startCircle.x += 777;
@@ -1232,6 +1243,7 @@ class PlayState extends MusicBeatState
 		startTimer = new FlxTimer().start(Conductor.crochet / 1000, function(tmr:FlxTimer)
 		{
 			dad.dance();
+			jamey.dance();
 			gf.dance();
 			boyfriend.playAnim('idle');
 
@@ -2207,27 +2219,44 @@ class PlayState extends MusicBeatState
 						    health -= 0.01;
 					  	}
 								dad.playAnim('singUP' + altAnim, true);
+								if (curCharacter == 'poyoandjamey')
+								{
+								  jamey.playAnim('singUP' + altAnim, true);
+								}
 							case 3:
 							if (dad.curCharacter == "poyo")
 						  {
 						    health -= 0.01;
 					  	}
 								dad.playAnim('singRIGHT' + altAnim, true);
+								if (curCharacter == 'poyoandjamey')
+								{
+								  jamey.playAnim('singRIGHT' + altAnim, true);
+								}
 							case 1:
 							if (dad.curCharacter == "poyo")
 						  {
 						    health -= 0.01;
 					  	}
 								dad.playAnim('singDOWN' + altAnim, true);
+						  if (curCharacter == 'poyoandjamey')
+								{
+								  jamey.playAnim('singDOWN' + altAnim, true);
+								}
 							case 0:
 							if (dad.curCharacter == "poyo")
 						  {
 						    health -= 0.01;
 					  	}
 								dad.playAnim('singLEFT' + altAnim, true);
+							if (curCharacter == 'poyoandjamey')
+								{
+								  jamey.playAnim('singLEFT' + altAnim, true);
+								}
 						}
 	
 						dad.holdTimer = 0;
+						jamey.holdTimer = 0;
 	
 						if (SONG.needsVoices)
 							vocals.volume = 1;
@@ -3442,6 +3471,7 @@ class PlayState extends MusicBeatState
 			// Dad doesnt interupt his own notes
 			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
 				dad.dance();
+				jamey.dance();
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);

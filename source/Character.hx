@@ -398,6 +398,25 @@ class Character extends FlxSprite
 
 				flipX = true;
 				
+				case 'poyoandjamey':
+				var tex = Paths.getSparrowAtlas('shitbox/Poyo','shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+        animation.addByPrefix('singLEFT', 'Right', 24, false);
+				animation.addByPrefix('singRIGHT', 'Left', 24, false);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 94, 8);
+				addOffset("singRIGHT", 50, 0);
+				addOffset("singLEFT", 181, 0);
+				addOffset("singDOWN", 0, -47);
+
+				playAnim('idle');
+
+				flipX = true;
+				
 				case 'sonic':
 				
 				#if !OPTIMIZE
