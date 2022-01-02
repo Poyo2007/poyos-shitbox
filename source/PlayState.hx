@@ -1253,7 +1253,10 @@ class PlayState extends MusicBeatState
 		startTimer = new FlxTimer().start(Conductor.crochet / 1000, function(tmr:FlxTimer)
 		{
 			dad.dance();
+			if (curCharacter == 'poyoandjamey')
+			{
 			jamey.dance();
+			}
 			gf.dance();
 			boyfriend.playAnim('idle');
 
@@ -3481,7 +3484,10 @@ class PlayState extends MusicBeatState
 			// Dad doesnt interupt his own notes
 			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
 				dad.dance();
+				if (curCharacter == 'poyoandjamey')
+				{
 				jamey.dance();
+				}
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);
