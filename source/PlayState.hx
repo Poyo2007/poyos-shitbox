@@ -636,7 +636,7 @@ class PlayState extends MusicBeatState
 			case 'jamey':
 			  dad.y += 300;
 		}
-		if (!boyfriend.curCharacter == 'bf')
+		if (!boyfriend.curCharacter() == 'bf')
 		{
 		boyfriend = new Boyfriend(770, 100, SONG.player1);
 		}
@@ -797,7 +797,7 @@ class PlayState extends MusicBeatState
 			add(limo);
 
 		add(dad);
-		if (dad.dad.curCharacter == 'poyoandjamey')
+		if (dad.curCharacter == 'poyoandjamey')
 		{
 		add(jamey);
 		}
