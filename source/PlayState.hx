@@ -1253,7 +1253,7 @@ class PlayState extends MusicBeatState
 		startTimer = new FlxTimer().start(Conductor.crochet / 1000, function(tmr:FlxTimer)
 		{
 			dad.dance();
-			if (curCharacter == 'poyoandjamey')
+			if (dad.curCharacter == 'poyoandjamey')
 			{
 			jamey.dance();
 			}
@@ -3484,7 +3484,7 @@ class PlayState extends MusicBeatState
 			// Dad doesnt interupt his own notes
 			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
 				dad.dance();
-				if (curCharacter == 'poyoandjamey')
+				if (dad.curCharacter == 'poyoandjamey')
 				{
 				jamey.dance();
 				}
