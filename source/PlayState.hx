@@ -636,14 +636,7 @@ class PlayState extends MusicBeatState
 			case 'jamey':
 			  dad.y += 300;
 		}
-		if (boyfriend.curCharacter == 'bf')
-		{
-		boyfriend = new Boyfriend(770, 450, SONG.player1);
-		}
-		else
-    {
     boyfriend = new Boyfriend(770, 100, SONG.player1);
-    }
 		
 		switch (SONG.player1)
 		{
@@ -686,6 +679,8 @@ class PlayState extends MusicBeatState
 				boyfriend.y += -50;
 			case 'poyo':
 			  boyfriend.y += 100;
+			case 'bf':
+			  boyfriend.y += 300;
 			case 'jamey':
 			  boyfriend.y += 300;
 		}
