@@ -636,13 +636,13 @@ class PlayState extends MusicBeatState
 			case 'jamey':
 			  dad.y += 300;
 		}
-		if (!boyfriend.curCharacter() == 'bf')
+		if (boyfriend.curCharacter == 'bf')
 		{
-		boyfriend = new Boyfriend(770, 100, SONG.player1);
+		boyfriend = new Boyfriend(770, 450, SONG.player1);
 		}
 		else
     {
-    boyfriend = new Boyfriend(770, 450, SONG.player1);
+    boyfriend = new Boyfriend(770, 100, SONG.player1);
     }
 		
 		switch (SONG.player1)
