@@ -583,7 +583,7 @@ class PlayState extends MusicBeatState
 		gf.scrollFactor.set(0.95, 0.95);
 
 		dad = new Character(100, 100, SONG.player2);
-		if (dad.dad.curCharacter == 'poyoandjamey')
+		if (dad.curCharacter == 'poyoandjamey')
 		{
 		jamey = new Character(100, 450, 'jamey');
 		}
@@ -636,7 +636,7 @@ class PlayState extends MusicBeatState
 			case 'jamey':
 			  dad.y += 300;
 		}
-		if (!curCharacter == 'bf')
+		if (!boyfriend.curCharacter == 'bf')
 		{
 		boyfriend = new Boyfriend(770, 100, SONG.player1);
 		}
@@ -755,7 +755,22 @@ class PlayState extends MusicBeatState
 				gf.y += 300;
 		}
 		
-		if (dad.curCharacter == 'poyo' || 'poyoandjamey')
+		if (dad.curCharacter == 'poyo')
+		{
+		  var robloxtxt:FlxText;
+			var wordWrap:Bool = false;
+      var autoSize:Bool = true;
+  
+      robloxtxt = new FlxText();
+      robloxtxt.text = "drippy";
+      robloxtxt.setFormat(Paths.font("rblx.ttf"), 50);
+      robloxtxt.scrollFactor.set(0.85, 0.85);
+      robloxtxt.y = dad.y + -80;
+      robloxtxt.x = dad.x;
+      add(robloxtxt);
+		}
+		
+		if (dad.curCharacter == 'poyoandjamey')
 		{
 		  var robloxtxt:FlxText;
 			var wordWrap:Bool = false;
