@@ -2269,7 +2269,10 @@ class PlayState extends MusicBeatState
 						}
 	
 						dad.holdTimer = 0;
+						if (dad.curCharacter == 'poyoandjamey')
+						{
 						jamey.holdTimer = 0;
+						}
 	
 						if (SONG.needsVoices)
 							vocals.volume = 1;
