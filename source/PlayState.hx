@@ -485,6 +485,23 @@ class PlayState extends MusicBeatState
 						porker.antialiasing = true;
 	
 					}
+			case 'mild-mania':
+				defaultCamZoom = 0.56;
+				if (SONG.song.toLowerCase == 'mild-mania') defaultCamZoom = 0.7;
+
+				curStage = 'red';
+
+				var bgbg:BGElement = new BGElement('WBG/sky', -590, -500,  1, 1, 4);
+				add(bgbg);
+
+				var lavaLimits:BGElement = new BGElement('WBG/castleback', -590, -500,  1, 1, 4);
+				add(lavaLimits);
+
+				var bgSpikes:BGElement = new BGElement('WBG/groundc', -590, -500,  1, 1, 4);
+				add(bgSpikes);
+				 
+				var lavaLimits:BGElement = new BGElement('WBG/pillar', -590, -500,  1, 1, 4);
+				add(lavaLimits);
 			case 'you-cant-run': // i fixed the bgs and shit!!! - razencro part 1
 			{
 						defaultCamZoom = .9;
@@ -585,7 +602,7 @@ class PlayState extends MusicBeatState
 		dad = new Character(100, 100, SONG.player2);
 		if (dad.curCharacter == 'poyoandjamey')
 		{
-		jamey = new Character(100, 450, 'jamey');
+		jamey = new Character(150, 450, 'jamey');
 		}
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
@@ -630,6 +647,8 @@ class PlayState extends MusicBeatState
 				dad.x -= 130;
 				dad.y += -50;
 			case 'poyo':
+			  dad.y += 100;
+			case 'poyoandjamey':
 			  dad.y += 100;
 			case 'bf':
 			  dad.y += 300;
