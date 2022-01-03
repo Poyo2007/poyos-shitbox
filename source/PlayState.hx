@@ -413,8 +413,6 @@ class PlayState extends MusicBeatState
 				sticklol.scrollFactor.set(1.37, 1);
 				sticklol.active = false;
 				add(sticklol);
-
-
 				}
 			case 'chaos': // fleetway my beloved
 			{
@@ -485,23 +483,7 @@ class PlayState extends MusicBeatState
 						porker.antialiasing = true;
 	
 					}
-			case 'mild-mania':
-				defaultCamZoom = 0.56;
-				if (SONG.song.toLowerCase == 'mild-mania') defaultCamZoom = 0.7;
 
-				curStage = 'red';
-
-				var bgbg:BGElement = new BGElement('WBG/sky', -590, -500,  1, 1, 4);
-				add(bgbg);
-
-				var lavaLimits:BGElement = new BGElement('WBG/castleback', -590, -500,  1, 1, 4);
-				add(lavaLimits);
-
-				var bgSpikes:BGElement = new BGElement('WBG/groundc', -590, -500,  1, 1, 4);
-				add(bgSpikes);
-				 
-				var lavaLimits:BGElement = new BGElement('WBG/pillar', -590, -500,  1, 1, 4);
-				add(lavaLimits);
 			case 'you-cant-run': // i fixed the bgs and shit!!! - razencro part 1
 			{
 						defaultCamZoom = .9;
