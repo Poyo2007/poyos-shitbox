@@ -24,7 +24,7 @@ class OptionsMenu extends MusicBeatState
 		  #if mobileC
 		  new CustomControls("Edit Mobile Controls."),
 		  #end
-		  new HealthDrainOption('if you disable this you arent gaming pro'
+		  new HealthDrainOption('if you disable this you arent gaming pro'),
 			new DFJKOption(controls),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
 			#if !html
