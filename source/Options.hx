@@ -177,7 +177,7 @@ class HealthDrainOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return FlxG.save.data.downscroll ? "Health Drain On" : "Health Drain Off";
+		return "Health Drain " + (!FlxG.save.data.healthdrain ? "off" : "on");
 	}
 }
 
