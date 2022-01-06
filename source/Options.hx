@@ -160,6 +160,27 @@ class DownscrollOption extends Option
 	}
 }
 
+class HealthDrainOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.healthdrain = !FlxG.save.data.healthdrain;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.downscroll ? "Health Drain On" : "Health Drain Off";
+	}
+}
+
 class AccuracyOption extends Option
 {
 	public function new(desc:String)

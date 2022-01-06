@@ -19,6 +19,9 @@ class KadeEngineData
 			
 		if (FlxG.save.data.accuracyDisplay == null)
 			FlxG.save.data.accuracyDisplay = true;
+			
+		if (FlxG.save.data.healthdrain == null)
+			FlxG.save.data.healthdrain = true;
 
 		if (FlxG.save.data.offset == null)
 			FlxG.save.data.offset = 0;

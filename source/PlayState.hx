@@ -584,7 +584,7 @@ class PlayState extends MusicBeatState
 		dad = new Character(100, 100, SONG.player2);
 		if (dad.curCharacter == 'poyoandjamey')
 		{
-		jamey = new Character(150, 450, 'jamey');
+		jamey = new Character(150, 450, 'jamey-p2');
 		}
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
@@ -2228,7 +2228,7 @@ class PlayState extends MusicBeatState
 						switch (Math.abs(daNote.noteData))
 						{
 							case 2:
-							if (dad.curCharacter == "poyo")
+							if (dad.curCharacter == "poyo" && FlxG.save.data.healthdrain)
 						  {
 						    health -= 0.01;
 					  	}
@@ -2238,7 +2238,7 @@ class PlayState extends MusicBeatState
 								  jamey.playAnim('singUP' + altAnim, true);
 								}
 							case 3:
-							if (dad.curCharacter == "poyo")
+							if (dad.curCharacter == "poyo" && FlxG.save.data.healthdrain)
 						  {
 						    health -= 0.01;
 					  	}
@@ -2248,7 +2248,7 @@ class PlayState extends MusicBeatState
 								  jamey.playAnim('singRIGHT' + altAnim, true);
 								}
 							case 1:
-							if (dad.curCharacter == "poyo")
+							if (dad.curCharacter == "poyo" && FlxG.save.data.healthdrain)
 						  {
 						    health -= 0.01;
 					  	}
@@ -2258,7 +2258,7 @@ class PlayState extends MusicBeatState
 								  jamey.playAnim('singDOWN' + altAnim, true);
 								}
 							case 0:
-							if (dad.curCharacter == "poyo")
+							if (dad.curCharacter == "poyo" && FlxG.save.data.healthdrain)
 						  {
 						    health -= 0.01;
 					  	}
