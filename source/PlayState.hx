@@ -1219,7 +1219,7 @@ class PlayState extends MusicBeatState
       }
       else
       {
-        health -= 0.01
+        health -= 0.01;
       }
 		new FlxTimer().start(5, function(tmr:FlxTimer)
 			{
