@@ -174,6 +174,9 @@ class PlayState extends MusicBeatState
 
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
+	
+	var dodgestupid:Bool = false;
+	var canyoudodge:Bool = false;
 
 	var talking:Bool = true;
 	var songScore:Int = 0;
@@ -483,7 +486,6 @@ class PlayState extends MusicBeatState
 						porker.antialiasing = true;
 	
 					}
-
 			case 'you-cant-run': // i fixed the bgs and shit!!! - razencro part 1
 			{
 						defaultCamZoom = .9;
@@ -533,6 +535,22 @@ class PlayState extends MusicBeatState
 						bgspec.scale.y = 8;
 						add(bgspec);
 					}
+			case 'no-noobs':
+			{
+
+						defaultCamZoom = 0.9;
+						curStage = 'hank';
+						var bg:FlxSprite = new FlxSprite(-600, -400).loadGraphic(Paths.image('accelerant/city_bg'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.6, 0.6);
+						bg.active = false;
+						add(bg);
+
+						var cliffs:FlxSprite = new FlxSprite(-600, -400).loadGraphic(Paths.image('accelerant/cliffs'));
+						cliffs.scrollFactor.set(0.9, 0.9);
+						cliffs.antialiasing = true;
+					    add(cliffs);
+			}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -680,6 +698,10 @@ class PlayState extends MusicBeatState
 				boyfriend.y += -50;
 			case 'poyo':
 			  boyfriend.y += 100;
+			case 'hank':
+				dad.x -= 400;
+				dad.y += 65;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'bf':
 			  boyfriend.y += 300;
 			case 'jamey':
@@ -760,8 +782,22 @@ class PlayState extends MusicBeatState
       robloxtxt = new FlxText();
       robloxtxt.text = "drippy";
       robloxtxt.setFormat(Paths.font("rblx.ttf"), 50);
-      robloxtxt.scrollFactor.set(0.85, 0.85);
+      robloxtxt.scrollFactor.set(0.86, 0.86);
       robloxtxt.y = dad.y + -80;
+      robloxtxt.x = dad.x;
+      add(robloxtxt);
+		}
+		if (dad.curCharacter == 'hank')
+		{
+		  var robloxtxt:FlxText;
+			var wordWrap:Bool = false;
+      var autoSize:Bool = true;
+  
+      robloxtxt = new FlxText();
+      robloxtxt.text = "EpicCosplayer";
+      robloxtxt.setFormat(Paths.font("rblx.ttf"), 50);
+      robloxtxt.scrollFactor.set(0.86, 0.86);
+      robloxtxt.y = dad.y + -50;
       robloxtxt.x = dad.x;
       add(robloxtxt);
 		}
@@ -1081,12 +1117,19 @@ class PlayState extends MusicBeatState
 
 		if (!loadRep)
 			rep = new Replay("na");
+			
+	  #if mobileC
+    if (curSong.toLowerCase() == 'no-noobs')
+    {
+		addVirtualPad(NONE, A_B);
+    }
+		#end
 
 		super.create();
 	}
 	
 	function doJumpscare(sound:Int = 0, opa:Int = 0)
-		{
+	{
 			trace ('JUMPSCARE aaaa');
 			
 			daJumpscare = new FlxSprite(0,0);
@@ -1145,6 +1188,46 @@ class PlayState extends MusicBeatState
 				remove(daJumpscare);
 			}
 		}
+		
+	function dodgeorloseyourhealth():Void
+  {
+				if(!dodgestupid){
+					//MURDER THE BITCH!
+					health -= 0.04;
+			}
+  }
+  
+  function fightback():Void
+  {
+    if (curSong.toLowerCase()== 'no-noobs')
+    {
+      youcanfightback = true;
+      waitabitbitch = false;
+    }
+    if (FlxG.random.bool(65) && youcanfightback && !waitabitbitch)
+			{
+				health += 0.04;
+				youcanfightback = false;
+        waitabitbitch = true;
+			}
+			else if waitabitbitch && !youcanfightback
+      {
+        health -= 0.04
+      }
+      else
+      {
+        health -= 0.04
+      }
+		new FlxTimer().start(5, function(tmr:FlxTimer)
+			{
+			  youcanfightback = true;
+			  waitabitbitch = false;
+			});
+  }
+  function warning():Void //For some reason, modchart doesn't like functions with no parameter? why? dunno.
+	{
+		FlxG.sound.play(Paths.sound('warn','shared'), 1);
+	}
 
 	function schoolIntro(?dialogueBox:DialogueBox):Void
 	{
@@ -1857,7 +1940,7 @@ class PlayState extends MusicBeatState
 			scoreTxt.text = "Suggested Offset: " + offsetTest;
 
 		}
-		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
+		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause && curSong.toLowerCase() == 'no-noobs')
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
@@ -1873,7 +1956,7 @@ class PlayState extends MusicBeatState
 				openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 		}
 		#if mobile
-		if (FlxG.android.justReleased.BACK && startedCountdown && canPause)
+		if (FlxG.android.justReleased.BACK && startedCountdown && canPause && curSong.toLowerCase() == 'no-noobs')
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
@@ -2724,6 +2807,39 @@ class PlayState extends MusicBeatState
 
 	private function keyShit():Void
 	{
+	  //this is copied from the vs qt mod shhhh
+    if(SONG.song.toLowerCase() == "no-noobs"{
+			//Dodge code, yes it's bad but oh well. -Haz
+			var dodgeButton = controls.ACCEPT; //I have no idea how to add custom controls so fuck it. -Haz
+
+			if(dodgeButton)
+				trace('butttonpressed');
+
+			if(dodgeButton && !bfDodging && bfCanDodge){
+				trace('DODGE START!');
+				dodgestupid = true;
+				canyoudodge = false;
+
+				FlxG.sound.play(Paths.sound('dodge01'));
+
+				//Wait, then set bfDodging back to false. -Haz
+				//V1.2 - Timer lasts a bit longer (by 0.00225)
+				//new FlxTimer().start(0.22625, function(tmr:FlxTimer) 		//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
+				//new FlxTimer().start(0.15, function(tmr:FlxTimer)			//UNCOMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
+				new FlxTimer().start(bfDodgeTiming, function(tmr:FlxTimer) 	//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
+				{
+					dodgestupid=false;
+					canyoudodge=true;
+					boyfriend.dance(); //V1.3 = This forces the animation to end when you are no longer safe as the animation keeps misleading people.
+					trace('DODGE END!');
+					//Cooldown timer so you can't keep spamming it.
+					//V1.3 = Incremented this by a little (0.005)
+					//new FlxTimer().start(0.1135, function(tmr:FlxTimer) 	//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
+					//new FlxTimer().start(0.1, function(tmr:FlxTimer) 		//UNCOMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
+				});
+			}
+		}
+
 		// HOLDING
 		var up = controls.UP;
 		var right = controls.RIGHT;

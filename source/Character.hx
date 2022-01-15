@@ -447,6 +447,22 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
+
+				case 'hank':
+				// HANK ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('shitbox/Hank_assets', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Hank Idle', 24);
+				animation.addByPrefix('singUP', 'Hank Up note', 24);
+				animation.addByPrefix('singRIGHT', 'Hank right note', 24);
+				animation.addByPrefix('singDOWN', 'Hank Down Note', 24);
+				animation.addByPrefix('singLEFT', 'Hank Left Note', 24);
+
+				addOffset("idle", -70, 150);
+				addOffset("singUP", -36, -27);
+				addOffset("singRIGHT", -170, -46);
+				addOffset("singLEFT", 100, -27);
+				addOffset("singDOWN", 0, 80);
 				
 				case 'poyoandjamey':
 				var tex = Paths.getSparrowAtlas('shitbox/Poyo','shared');
