@@ -1199,18 +1199,20 @@ class PlayState extends MusicBeatState
   
   function fightback():Void
   {
+    var fightbutton = controls.BACK;
     if (curSong.toLowerCase()== 'no-noobs')
     {
       youcanfightback = true;
       waitabitbitch = false;
-    }
-    if (FlxG.random.bool(65) && youcanfightback && !waitabitbitch)
+    if (fightbutton)
+    {
+    if (FlxG.random.bool(65) && youcanfightback)
 			{
 				health += 0.04;
 				youcanfightback = false;
         waitabitbitch = true;
 			}
-			else if waitabitbitch && !youcanfightback
+			else if !youcanfightback
       {
         health -= 0.04
       }
@@ -1223,7 +1225,9 @@ class PlayState extends MusicBeatState
 			  youcanfightback = true;
 			  waitabitbitch = false;
 			});
-  }
+    }
+   }
+ }
   function warning():Void //For some reason, modchart doesn't like functions with no parameter? why? dunno.
 	{
 		FlxG.sound.play(Paths.sound('warn','shared'), 1);
@@ -2810,7 +2814,7 @@ class PlayState extends MusicBeatState
 	  //this is copied from the vs qt mod shhhh
     if(SONG.song.toLowerCase() == "no-noobs"{
 			//Dodge code, yes it's bad but oh well. -Haz
-			var dodgeButton = controls.ACCEPT; //I have no idea how to add custom controls so fuck it. -Haz
+			 //I have no idea how to add custom controls so fuck it. -Haz
 
 			if(dodgeButton)
 				trace('butttonpressed');
