@@ -1228,6 +1228,7 @@ class PlayState extends MusicBeatState
 			});
     }
     }
+  }
   function warning():Void //For some reason, modchart doesn't like functions with no parameter? why? dunno.
 	{
 		FlxG.sound.play(Paths.sound('warn','shared'), 1);
