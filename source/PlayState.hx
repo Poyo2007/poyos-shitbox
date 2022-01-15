@@ -1213,7 +1213,7 @@ class PlayState extends MusicBeatState
 				youcanfightback = false;
         waitabitbitch = true;
 			}
-			else if (!youcantfightback && waitabitbitch)
+			else if (!youcanfightback && waitabitbitch)
       {
         health -= 0.04;
       }
@@ -2817,6 +2817,7 @@ class PlayState extends MusicBeatState
     if(SONG.song.toLowerCase() == "no-noobs"){
 			//Dodge code, yes it's bad but oh well. -Haz
 			 //I have no idea how to add custom controls so fuck it. -Haz
+      var dodgeButton = controls.ACCEPT;
 
 			if(dodgeButton)
 				trace('butttonpressed');
