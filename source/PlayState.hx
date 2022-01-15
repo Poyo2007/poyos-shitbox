@@ -2822,7 +2822,7 @@ class PlayState extends MusicBeatState
 			if(dodgeButton)
 				trace('butttonpressed');
 
-			if(dodgeButton && !bfDodging && bfCanDodge){
+			if(dodgeButton && !dodgestupid && canyoudodge){
 				trace('DODGE START!');
 				dodgestupid = true;
 				canyoudodge = false;
