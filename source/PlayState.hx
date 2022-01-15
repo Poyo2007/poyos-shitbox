@@ -1229,6 +1229,7 @@ class PlayState extends MusicBeatState
     }
     }
   }
+  
   function warning():Void //For some reason, modchart doesn't like functions with no parameter? why? dunno.
 	{
 		FlxG.sound.play(Paths.sound('warn','shared'), 1);
@@ -2813,7 +2814,7 @@ class PlayState extends MusicBeatState
 	private function keyShit():Void
 	{
 	  //this is copied from the vs qt mod shhhh
-    if(SONG.song.toLowerCase() == "no-noobs"{
+    if(SONG.song.toLowerCase() == "no-noobs"){
 			//Dodge code, yes it's bad but oh well. -Haz
 			 //I have no idea how to add custom controls so fuck it. -Haz
 
