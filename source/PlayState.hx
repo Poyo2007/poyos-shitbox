@@ -116,8 +116,7 @@ class PlayState extends MusicBeatState
 	private var totalNotesHitDefault:Float = 0;
 	private var totalPlayed:Int = 0;
 	private var ss:Bool = false;
-
-
+  
 	private var healthBarBG:FlxSprite;
 	private var healthBar:FlxBar;
 	private var songPositionBar:Float = 0;
@@ -133,7 +132,6 @@ class PlayState extends MusicBeatState
 	public static var offsetTesting:Bool = false;
 	
 	var daJumpscare:FlxSprite;
-
 
 	var notesHitArray:Array<Date> = [];
 	var currentFrames:Int = 0;
@@ -177,6 +175,8 @@ class PlayState extends MusicBeatState
 	
 	var dodgestupid:Bool = false;
 	var canyoudodge:Bool = false;
+	var youcanfightback:Bool = false;
+	var waitabitbitch:Bool = false;
 
 	var talking:Bool = true;
 	var songScore:Int = 0;
