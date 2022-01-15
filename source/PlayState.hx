@@ -173,6 +173,7 @@ class PlayState extends MusicBeatState
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
 	
+	var bfDodgeTiming:Float = 0.22625;
 	var dodgestupid:Bool = false;
 	var canyoudodge:Bool = false;
 	var youcanfightback:Bool = false;
@@ -1206,15 +1207,19 @@ class PlayState extends MusicBeatState
       waitabitbitch = false;
     if (fightbutton)
     {
-    if (FlxG.random.bool(65) && youcanfightback)
+    if (FlxG.random.bool(65) && youcanfightback && !waitabitbitch)
 			{
 				health += 0.04;
 				youcanfightback = false;
         waitabitbitch = true;
 			}
-			else
+			else if (!youcantfightback && waitabitbitch)
       {
-        health -= 0.04
+        health -= 0.04;
+      }
+      else
+      {
+        health -= 0.01
       }
 		new FlxTimer().start(5, function(tmr:FlxTimer)
 			{
@@ -2828,7 +2833,7 @@ class PlayState extends MusicBeatState
 				{
 					dodgestupid=false;
 					canyoudodge=true;
-					boyfriend.dance(); //V1.3 = This forces the animation to end when you are no longer safe as the animation keeps misleading people.
+					//boyfriend.dance(); //V1.3 = This forces the animation to end when you are no longer safe as the animation keeps misleading people.
 					trace('DODGE END!');
 					//Cooldown timer so you can't keep spamming it.
 					//V1.3 = Incremented this by a little (0.005)
