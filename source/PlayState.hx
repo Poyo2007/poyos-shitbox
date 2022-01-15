@@ -1212,7 +1212,7 @@ class PlayState extends MusicBeatState
 				youcanfightback = false;
         waitabitbitch = true;
 			}
-			else if !youcanfightback
+			else if waitabitbitch
       {
         health -= 0.04
       }
