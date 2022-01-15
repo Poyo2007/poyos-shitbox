@@ -1212,11 +1212,7 @@ class PlayState extends MusicBeatState
 				youcanfightback = false;
         waitabitbitch = true;
 			}
-			else if waitabitbitch
-      {
-        health -= 0.04
-      }
-      else
+			else
       {
         health -= 0.04
       }
@@ -1226,8 +1222,6 @@ class PlayState extends MusicBeatState
 			  waitabitbitch = false;
 			});
     }
-   }
- }
   function warning():Void //For some reason, modchart doesn't like functions with no parameter? why? dunno.
 	{
 		FlxG.sound.play(Paths.sound('warn','shared'), 1);
