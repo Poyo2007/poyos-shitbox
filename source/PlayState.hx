@@ -26,6 +26,7 @@ import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
+import flixel.ui.FlxButton;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.ui.FlxBar;
@@ -1123,15 +1124,16 @@ class PlayState extends MusicBeatState
 
 		if (!loadRep)
 			rep = new Replay("na");
-			
-	  #if mobileC
-    if (curSong.toLowerCase() == 'no-noobs')
-    {
-		addVirtualPad(NONE, A_B);
-    }
-		#end
 
 		super.create();
+		
+		var space = new FlxButton(0, -60, "");
+		    space.loadGraphic(Paths.image("mobilekeys/spacebutton")); //"assets/images/key_space.png"
+        space.alpha = 0.75;
+    
+    var shift = new FlxButton(-10, -60, ""):
+        shift.loadGraphic(Paths.image("mobilekeys/shiftbutton")); //"assets/images/key_space.png"
+        shift.alpha = 0.75;
 	}
 	
 	function doJumpscare(sound:Int = 0, opa:Int = 0)
@@ -2793,10 +2795,14 @@ class PlayState extends MusicBeatState
       var dodgeButton = FlxG.keys.anyPressed([SPACE]);
       var attackButton = FlxG.keys.anyPressed([SHIFT]);
     #end
-    #if mobile
-    var virtualPad = Mobilecontrols._virtualPad;
-      var dodgeButton = _virtualPad.buttonA.pressed;
-      var attackButton = _virtualPad.buttonB.pressed;
+    #if FLX_TOUCH
+    add(shift);
+    add(space);
+    var dodgeButton = space.justPressed;
+    var attackButton = shift.justPressed;
+    #else
+    space.destroy();
+    shift.destroy();
     #end
     
     if (attackButton)
@@ -2809,11 +2815,11 @@ class PlayState extends MusicBeatState
 			}
 			else if (!youcanfightback && waitabitbitch)
       {
-        health -= 0.04;
+        health -= 0.02;
       }
       else
       {
-        health -= 0.02;
+        health -= 0.04;
       }
 		new FlxTimer().start(5, function(tmr:FlxTimer)
 			{
@@ -2831,6 +2837,7 @@ class PlayState extends MusicBeatState
 				trace('DODGE START!');
 				dodgestupid = true;
 				canyoudodge = false;
+				boyfriend.playAnim('dodge');
 
 				FlxG.sound.play(Paths.sound('dodge01'));
 
