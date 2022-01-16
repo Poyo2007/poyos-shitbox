@@ -2786,7 +2786,7 @@ class PlayState extends MusicBeatState
       var dodgeButton = controls.ACCEPT;
       var attackButton = controls.BACK;
     if(SONG.song.toLowerCase() == "no-noobs"){
-    if (fightbutton)
+    if (attackButton)
     {
     if (FlxG.random.bool(50) && youcanfightback && !waitabitbitch)
 			{
