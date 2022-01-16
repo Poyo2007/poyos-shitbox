@@ -1198,38 +1198,6 @@ class PlayState extends MusicBeatState
 			}
   }
   
-  function fightback():Void
-  {
-    var fightbutton = controls.BACK;
-    if (curSong.toLowerCase()== 'no-noobs')
-    {
-      youcanfightback = true;
-      waitabitbitch = false;
-    if (fightbutton)
-    {
-    if (FlxG.random.bool(65) && youcanfightback && !waitabitbitch)
-			{
-				health += 0.04;
-				youcanfightback = false;
-        waitabitbitch = true;
-			}
-			else if (!youcanfightback && waitabitbitch)
-      {
-        health -= 0.04;
-      }
-      else
-      {
-        health -= 0.01;
-      }
-		new FlxTimer().start(5, function(tmr:FlxTimer)
-			{
-			  youcanfightback = true;
-			  waitabitbitch = false;
-			});
-    }
-    }
-  }
-  
   function warning():Void //For some reason, modchart doesn't like functions with no parameter? why? dunno.
 	{
 		FlxG.sound.play(Paths.sound('warn','shared'), 1);
@@ -1448,6 +1416,7 @@ class PlayState extends MusicBeatState
 
 	function startSong():Void
 	{
+	  canyoudodge = true;
 		startingSong = false;
 
 		previousFrameTime = FlxG.game.ticks;
@@ -2814,10 +2783,33 @@ class PlayState extends MusicBeatState
 	private function keyShit():Void
 	{
 	  //this is copied from the vs qt mod shhhh
+      var dodgeButton = controls.ACCEPT;
+      var attackButton = controls.BACK;
     if(SONG.song.toLowerCase() == "no-noobs"){
+    if (fightbutton)
+    {
+    if (FlxG.random.bool(50) && youcanfightback && !waitabitbitch)
+			{
+				health += 0.04;
+				youcanfightback = false;
+        waitabitbitch = true;
+			}
+			else if (!youcanfightback && waitabitbitch)
+      {
+        health -= 0.04;
+      }
+      else
+      {
+        health -= 0.02;
+      }
+		new FlxTimer().start(5, function(tmr:FlxTimer)
+			{
+			  youcanfightback = true;
+			  waitabitbitch = false;
+			});
+    }
 			//Dodge code, yes it's bad but oh well. -Haz
 			 //I have no idea how to add custom controls so fuck it. -Haz
-      var dodgeButton = controls.ACCEPT;
 
 			if(dodgeButton)
 				trace('butttonpressed');
