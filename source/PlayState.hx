@@ -1131,7 +1131,7 @@ class PlayState extends MusicBeatState
 		    space.loadGraphic(Paths.image("mobilekeys/spacebutton")); //"assets/images/key_space.png"
         space.alpha = 0.75;
     
-    var shift = new FlxButton(-10, -60, ""):
+    var shift = new FlxButton(-10, -60, "");
         shift.loadGraphic(Paths.image("mobilekeys/shiftbutton")); //"assets/images/key_space.png"
         shift.alpha = 0.75;
 	}
