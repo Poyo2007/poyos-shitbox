@@ -68,6 +68,8 @@ class PlayState extends MusicBeatState
 
 	public static var rep:Replay;
 	public static var loadRep:Bool = false;
+	
+	public static var virtualPad:FlxVirtualPad;
 
 	public static var noteBools:Array<Bool> = [false, false, false, false];
 
@@ -2795,8 +2797,8 @@ class PlayState extends MusicBeatState
     #end
     #if mobile
     var virtualPad = PlayState.virtualPad;
-      var dodgeButton = A || virtualPad.buttonA.pressed;
-      var attackButton = B || virtualPad.buttonB.pressed;
+      var dodgeButton = virtualPad.buttonA.pressed;
+      var attackButton = virtualPad.buttonB.pressed;
     #end
     
     if (attackButton)
