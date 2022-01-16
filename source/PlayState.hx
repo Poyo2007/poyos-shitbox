@@ -772,6 +772,11 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
+		  case 'hank':
+				boyfriend.x += 500;
+				boyfriend.y += 220;
+				gf.x += 180;
+				gf.y += 220;
 		}
 		
 		if (dad.curCharacter == 'poyo')
@@ -2782,10 +2787,18 @@ class PlayState extends MusicBeatState
 
 	private function keyShit():Void
 	{
+	  if(SONG.song.toLowerCase() == "no-noobs"){
 	  //this is copied from the vs qt mod shhhh
-      var dodgeButton = controls.ACCEPT;
-      var attackButton = controls.BACK;
-    if(SONG.song.toLowerCase() == "no-noobs"){
+    #if FLX_KEYBOARD
+      var dodgeButton = FlxG.keys.anyPressed([SPACE]);
+      var attackButton = FlxG.keys.anyPressed([SHIFT]);
+    #end
+    #if mobile
+    var virtualPad = PlayState.virtualPad;
+      var dodgeButton = A || virtualPad.buttonA.pressed;
+      var attackButton = B || virtualPad.buttonB.pressed;
+    #end
+    
     if (attackButton)
     {
     if (FlxG.random.bool(50) && youcanfightback && !waitabitbitch)
