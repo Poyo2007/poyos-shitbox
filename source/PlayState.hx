@@ -1132,14 +1132,14 @@ class PlayState extends MusicBeatState
 
 		super.create();
 		
-		    space = new FlxButton(-60, 60, "");
+		    space = new FlxButton(10, 360, "");
 		    space.loadGraphic(Paths.image("mobilekeys/spacebutton")); //"assets/images/key_space.png"
-		    space.setGraphicSize(Std.int(space.width * 4));
+		    space.setGraphicSize(Std.int(space.width * 2));
         space.alpha = 0.75;
     
-        shift = new FlxButton(-60, 200, "");
+        shift = new FlxButton(1130, 360, "");
         shift.loadGraphic(Paths.image("mobilekeys/shiftbutton")); //"assets/images/key_space.png"
-        shift.setGraphicSize(Std.int(shift.width * 4));
+        shift.setGraphicSize(Std.int(shift.width * 2));
         shift.alpha = 0.75;
 	}
 	
@@ -1208,7 +1208,9 @@ class PlayState extends MusicBeatState
   {
 				if(!dodgestupid){
 					//MURDER THE BITCH!
-					health -= 0.04;
+					health -= 0.3;
+			  FlxG.sound.play(Paths.sound('bonk'));
+			  FlxG.camera.flash(FlxColor.RED, 0.1);
 			}
   }
   
@@ -2834,21 +2836,33 @@ class PlayState extends MusicBeatState
     
     if (attackButton)
     {
-    if (FlxG.random.bool(50) && youcanfightback && !waitabitbitch)
+    if (FlxG.random.bool(70) && youcanfightback && !waitabitbitch)
 			{
 				health += 0.2;
 				youcanfightback = false;
         waitabitbitch = true;
+        FlxG.sound.play(Paths.sound('bonk'));
 			}
 			else if (!youcanfightback && waitabitbitch)
       {
-        health -= 0.02;
+        health -= 0.3;
+        FlxG.sound.play(Paths.sound('bonk'));
+        FlxG.camera.flash(FlxColor.BLACK, 1);
+        var uhoh:FlxText;
+			var wordWrap:Bool = false;
+      var autoSize:Bool = true;
+  
+      uhoh = new FlxText();
+      uhoh.text = "WAIT A BIT OH SHIT";
+      uhoh.setFormat(Paths.font("rblx.ttf"), 50);
+      uhoh.screenCenter();
+      add(uhoh);
       }
       else
       {
         health -= 0.2;
       }
-		new FlxTimer().start(5, function(tmr:FlxTimer)
+		new FlxTimer().start(3, function(tmr:FlxTimer)
 			{
 			  youcanfightback = true;
 			  waitabitbitch = false;
@@ -3704,9 +3718,7 @@ class PlayState extends MusicBeatState
 				  warning();
 				  new FlxTimer().start(2, function(tmr:FlxTimer)
           {
-				  if(!dodgestupid){
-					//MURDER THE BITCH!
-					health -= 0.1;
+				  dodgeorloseyourhealth();
 				  }
           });
 				}

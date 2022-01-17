@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.graphics.frames.FlxAtlasFrames;
+import flixel.text.FlxText;
 import flixel.input.gamepad.FlxGamepad;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -15,6 +16,7 @@ class GameOverState extends FlxTransitionableState
 
 	public function new(x:Float, y:Float)
 	{
+	  var daSong = PlayState.curSong;
 		super();
 
 		bfX = x;
@@ -29,13 +31,27 @@ class GameOverState extends FlxTransitionableState
 			loser.animation.addByPrefix('lose', 'lose', 24, false);
 			loser.animation.play('lose');
 			// add(loser); */
-
+	  if (!curSong == 'No-Noobs')
+	  {
 		var bf:Boyfriend = new Boyfriend(bfX, bfY);
 		// bf.scrollFactor.set();
 		add(bf);
 		bf.playAnim('firstDeath');
 
 		FlxG.camera.follow(bf, LOCKON, 0.001);
+	  }
+	  else
+    {
+    FlxG.camera.flash(FlxColor.RED, 5);
+    var death:FlxText;
+			var wordWrap:Bool = false;
+      var autoSize:Bool = true;
+  
+      death = new FlxText();
+      death.text = "YOU DIED";
+      death.setFormat(Paths.font("rblx.ttf"), 50);
+      death.screenCenter();
+      add(death);
 		/* 
 			var restart:FlxSprite = new FlxSprite(500, 50).loadGraphic(AssetPaths.restart.png);
 			restart.setGraphicSize(Std.int(restart.width * 0.6));
