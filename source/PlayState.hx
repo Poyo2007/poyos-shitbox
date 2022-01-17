@@ -2871,6 +2871,7 @@ class PlayState extends MusicBeatState
 				//new FlxTimer().start(0.22625, function(tmr:FlxTimer) 		//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
 				//new FlxTimer().start(0.15, function(tmr:FlxTimer)			//UNCOMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
 				 	//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
+				 	new FlxTimer().start(0.5, function(tmr:FlxTimer) 	//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
 				{
 					dodgestupid=false;
 					canyoudodge=true;
