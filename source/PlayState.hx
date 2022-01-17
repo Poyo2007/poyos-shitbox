@@ -2853,10 +2853,10 @@ class PlayState extends MusicBeatState
       var autoSize:Bool = true;
   
       uhoh = new FlxText();
-      uhoh.text = "WAIT A BIT OH SHIT";
+      uhoh.text = "WAIT A BIT STUPID BITCH";
       uhoh.setFormat(Paths.font("rblx.ttf"), 50);
       uhoh.screenCenter();
-      add(robloxtxt);
+      add(uhoh);
       }
       else
       {
