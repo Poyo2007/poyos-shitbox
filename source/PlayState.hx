@@ -1132,10 +1132,12 @@ class PlayState extends MusicBeatState
 		
 		    space = new FlxButton(-60, 60, "");
 		    space.loadGraphic(Paths.image("mobilekeys/spacebutton")); //"assets/images/key_space.png"
+		    space.setGraphicSize(Std.int(width * 4));
         space.alpha = 0.75;
     
         shift = new FlxButton(-60, 200, "");
         shift.loadGraphic(Paths.image("mobilekeys/shiftbutton")); //"assets/images/key_space.png"
+        shift.setGraphicSize(Std.int(width * 4));
         shift.alpha = 0.75;
 	}
 	
@@ -1210,7 +1212,30 @@ class PlayState extends MusicBeatState
   
   function warning():Void //For some reason, modchart doesn't like functions with no parameter? why? dunno.
 	{
+	  var alpha:Float = 1;
+    var sprite:FlxSprite;
+    var alphaDir:Int = -1;
+    
+	  watchout = new FlxSprite();
+				watchout.frames = Paths.getSparrowAtlas('attackmechanic/attack_alert_NEW');
+				watchout.animation.addByPrefix('alert', 'kb_attack_animation_alert-single', 24, false);	
+				watchout.antialiasing = true;
+				watchout.screenCenter();
+	  watchout.animation.play('alert');
 		FlxG.sound.play(Paths.sound('warn','shared'), 1);
+		alpha += 0.02 * alphaDir;
+
+        if (alpha > 1)
+            alphaDir = -1;
+        else if (alpha < 0)
+            alphaDir = 1;
+    new FlxTimer().start(0.02, function(tmr:FlxTimer)
+    {
+    remove(watchout);
+    });
+    
+    
+    
 	}
 
 	function schoolIntro(?dialogueBox:DialogueBox):Void
@@ -2803,16 +2828,13 @@ class PlayState extends MusicBeatState
     add(space);
     var dodgeButton = space.justPressed;
     var attackButton = shift.justPressed;
-    #else
-    space.destroy();
-    shift.destroy();
     #end
     
     if (attackButton)
     {
     if (FlxG.random.bool(50) && youcanfightback && !waitabitbitch)
 			{
-				health += 0.04;
+				health += 0.2;
 				youcanfightback = false;
         waitabitbitch = true;
 			}
@@ -2822,7 +2844,7 @@ class PlayState extends MusicBeatState
       }
       else
       {
-        health -= 0.04;
+        health -= 0.2;
       }
 		new FlxTimer().start(5, function(tmr:FlxTimer)
 			{
@@ -2848,7 +2870,7 @@ class PlayState extends MusicBeatState
 				//V1.2 - Timer lasts a bit longer (by 0.00225)
 				//new FlxTimer().start(0.22625, function(tmr:FlxTimer) 		//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
 				//new FlxTimer().start(0.15, function(tmr:FlxTimer)			//UNCOMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
-				new FlxTimer().start(bfDodgeTiming, function(tmr:FlxTimer) 	//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
+				 	//COMMENT THIS IF YOU WANT TO USE DOUBLE SAW VARIATIONS!
 				{
 					dodgestupid=false;
 					canyoudodge=true;
@@ -3673,6 +3695,18 @@ class PlayState extends MusicBeatState
 				boyfriend.playAnim('hey', true);
 				dad.playAnim('cheer', true);
 			}
+		
+		if (curBeat % 4 == 0 && FlxG.random.bool(70) && SONG.song == 'No-Noobs')
+				{
+				  warning();
+				  new FlxTimer().start(2, function(tmr:FlxTimer)
+          {
+				  if(!dodgestupid){
+					//MURDER THE BITCH!
+					health -= 0.1;
+				  }
+          });
+				}
 
 		switch (curStage)
 		{

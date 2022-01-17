@@ -437,6 +437,7 @@ class Character extends FlxSprite
         animation.addByPrefix('singLEFT', 'Right', 24, false);
 				animation.addByPrefix('singRIGHT', 'Left', 24, false);
 				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('dodge', 'Right', 24, false);
 
 				addOffset('idle');
 				addOffset("singUP", 94, 8);
