@@ -2856,7 +2856,7 @@ class PlayState extends MusicBeatState
       uhoh.text = "WAIT A BIT OH SHIT";
       uhoh.setFormat(Paths.font("rblx.ttf"), 50);
       uhoh.screenCenter();
-      add(uhoh);
+      add(robloxtxt);
       }
       else
       {
@@ -3719,9 +3719,8 @@ class PlayState extends MusicBeatState
 				  new FlxTimer().start(2, function(tmr:FlxTimer)
           {
 				  dodgeorloseyourhealth();
-				  }
-          });
-				}
+				  });
+          }
 
 		switch (curStage)
 		{
