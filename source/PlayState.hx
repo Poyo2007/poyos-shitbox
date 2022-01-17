@@ -171,6 +171,8 @@ class PlayState extends MusicBeatState
 	
 	var space:FlxButton;
 	var shift:FlxButton;
+	
+	var watchout:FlxSprite;
 
 	var fc:Bool = true;
 
@@ -1132,12 +1134,12 @@ class PlayState extends MusicBeatState
 		
 		    space = new FlxButton(-60, 60, "");
 		    space.loadGraphic(Paths.image("mobilekeys/spacebutton")); //"assets/images/key_space.png"
-		    space.setGraphicSize(Std.int(width * 4));
+		    space.setGraphicSize(Std.int(space.width * 4));
         space.alpha = 0.75;
     
         shift = new FlxButton(-60, 200, "");
         shift.loadGraphic(Paths.image("mobilekeys/shiftbutton")); //"assets/images/key_space.png"
-        shift.setGraphicSize(Std.int(width * 4));
+        shift.setGraphicSize(Std.int(shift.width * 4));
         shift.alpha = 0.75;
 	}
 	
