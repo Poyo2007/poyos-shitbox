@@ -52,6 +52,7 @@ class GameOverState extends FlxTransitionableState
       death.setFormat(Paths.font("rblx.ttf"), 50);
       death.screenCenter();
       add(death);
+    }
 		/* 
 			var restart:FlxSprite = new FlxSprite(500, 50).loadGraphic(AssetPaths.restart.png);
 			restart.setGraphicSize(Std.int(restart.width * 0.6));
@@ -66,7 +67,6 @@ class GameOverState extends FlxTransitionableState
 		// FlxTween.tween(restart, {y: restart.y + 40}, 7, {ease: FlxEase.quartInOut, type: PINGPONG});
 
 		super.create();
-	}
 
 	private var fading:Bool = false;
 

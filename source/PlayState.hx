@@ -830,7 +830,7 @@ class PlayState extends MusicBeatState
 		
 		#if !OPTIMIZE
     {
-      if (SONG.song.toLowerCase() == 'chaos')
+      if (!SONG.song.toLowerCase() == 'chaos' || 'no-noobs')
 		  add(gf);
     }
     #end
@@ -1954,7 +1954,7 @@ class PlayState extends MusicBeatState
 			scoreTxt.text = "Suggested Offset: " + offsetTest;
 
 		}
-		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause && curSong.toLowerCase() == 'no-noobs')
+		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
@@ -1970,7 +1970,7 @@ class PlayState extends MusicBeatState
 				openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 		}
 		#if mobile
-		if (FlxG.android.justReleased.BACK && startedCountdown && canPause && curSong.toLowerCase() == 'no-noobs')
+		if (FlxG.android.justReleased.BACK && startedCountdown && canPause)
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
@@ -2830,8 +2830,8 @@ class PlayState extends MusicBeatState
     #if FLX_TOUCH
     add(shift);
     add(space);
-    var dodgeButton = space.justPressed;
-    var attackButton = shift.justPressed;
+    var dodgeButton = space.justPressed || FlxG.keys.anyPressed([SPACE]);
+    var attackButton = shift.justPressed || FlxG.keys.anyPressed([SHIFT]);
     #end
     
     if (attackButton)
@@ -3713,10 +3713,10 @@ class PlayState extends MusicBeatState
 				dad.playAnim('cheer', true);
 			}
 		
-		if (curBeat % 4 == 0 && FlxG.random.bool(70) && SONG.song == 'No-Noobs')
+		if (curBeat % 8 == 4 && FlxG.random.bool(70) && SONG.song == 'No-Noobs')
 				{
 				  warning();
-				  new FlxTimer().start(0.2, function(tmr:FlxTimer)
+				  new FlxTimer().start(0.8, function(tmr:FlxTimer)
           {
 				  dodgeorloseyourhealth();
 				  });
