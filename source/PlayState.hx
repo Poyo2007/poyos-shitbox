@@ -827,15 +827,6 @@ class PlayState extends MusicBeatState
       robloxtxt.x = dad.x;
       add(robloxtxt);
 		}
-		
-		#if !OPTIMIZE
-    {
-      if (!curSong == 'chaos' && !curSong == 'No-Noobs')
-      {
-		  add(gf);
-      }
-    }
-    #end
 
 		// Shitty layering but whatev it works LOL
 		if (curStage == 'limo')
