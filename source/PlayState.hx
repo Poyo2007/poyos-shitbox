@@ -830,7 +830,7 @@ class PlayState extends MusicBeatState
 		
 		#if !OPTIMIZE
     {
-      if (!SONG.song.toLowerCase() == 'chaos' && !SONG.song.toLowerCase() == 'no-noobs')
+      if (curSong == 'chaos' && !curSong == 'No-Noobs')
 		  add(gf);
     }
     #end
