@@ -779,8 +779,7 @@ class PlayState extends MusicBeatState
 				gf.x += 180;
 				gf.y += 300;
 		  case 'hank':
-				boyfriend.x += 500;
-				boyfriend.y += 220;
+				boyfriend.x += 200;
 				gf.x += 180;
 				gf.y += 220;
 		}
@@ -1210,7 +1209,7 @@ class PlayState extends MusicBeatState
 					//MURDER THE BITCH!
 					health -= 0.3;
 			  FlxG.sound.play(Paths.sound('bonk'));
-			  FlxG.camera.flash(FlxColor.RED, 0.1);
+			  FlxG.camera.flash(FlxColor.RED, 0.5);
 			}
   }
   
@@ -1225,6 +1224,7 @@ class PlayState extends MusicBeatState
 				watchout.animation.addByPrefix('alert', 'kb_attack_animation_alert-single', 24, false);	
 				watchout.antialiasing = true;
 				watchout.screenCenter();
+				add(watchout);
 	  watchout.animation.play('alert');
 		FlxG.sound.play(Paths.sound('warn','shared'), 1);
 		alpha += 0.02 * alphaDir;
@@ -1233,7 +1233,7 @@ class PlayState extends MusicBeatState
             alphaDir = -1;
         else if (alpha < 0)
             alphaDir = 1;
-    new FlxTimer().start(0.02, function(tmr:FlxTimer)
+    new FlxTimer().start(0.2, function(tmr:FlxTimer)
     {
     remove(watchout);
     });
@@ -3716,7 +3716,7 @@ class PlayState extends MusicBeatState
 		if (curBeat % 4 == 0 && FlxG.random.bool(70) && SONG.song == 'No-Noobs')
 				{
 				  warning();
-				  new FlxTimer().start(2, function(tmr:FlxTimer)
+				  new FlxTimer().start(0.2, function(tmr:FlxTimer)
           {
 				  dodgeorloseyourhealth();
 				  });
