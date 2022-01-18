@@ -830,7 +830,7 @@ class PlayState extends MusicBeatState
 		
 		#if !OPTIMIZE
     {
-      if (!SONG.song.toLowerCase() == 'chaos' || 'no-noobs')
+      if (!SONG.song.toLowerCase() == 'chaos' && !SONG.song.toLowerCase() == 'no-noobs')
 		  add(gf);
     }
     #end
@@ -1233,7 +1233,7 @@ class PlayState extends MusicBeatState
             alphaDir = -1;
         else if (alpha < 0)
             alphaDir = 1;
-    new FlxTimer().start(0.2, function(tmr:FlxTimer)
+    new FlxTimer().start(0.8, function(tmr:FlxTimer)
     {
     remove(watchout);
     });
@@ -2848,15 +2848,6 @@ class PlayState extends MusicBeatState
         health -= 0.3;
         FlxG.sound.play(Paths.sound('bonk'));
         FlxG.camera.flash(FlxColor.BLACK, 1);
-        var uhoh:FlxText;
-			var wordWrap:Bool = false;
-      var autoSize:Bool = true;
-  
-      uhoh = new FlxText();
-      uhoh.text = "WAIT A BIT STUPID BITCH";
-      uhoh.setFormat(Paths.font("rblx.ttf"), 50);
-      uhoh.screenCenter();
-      add(uhoh);
       }
       else
       {

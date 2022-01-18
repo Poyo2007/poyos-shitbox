@@ -31,7 +31,7 @@ class GameOverState extends FlxTransitionableState
 			loser.animation.addByPrefix('lose', 'lose', 24, false);
 			loser.animation.play('lose');
 			// add(loser); */
-	  if (!curSong == 'No-Noobs')
+	  if (!daSong == 'No-Noobs')
 	  {
 		var bf:Boyfriend = new Boyfriend(bfX, bfY);
 		// bf.scrollFactor.set();
