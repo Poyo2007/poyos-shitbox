@@ -430,7 +430,7 @@ class Character extends FlxSprite
 				flipX = true;
 				
 				case 'poyo':
-				var tex = Paths.getSparrowAtlas('shitbox/Poyo','shared');
+				var tex = Paths.getSparrowAtlas('shitbox/poyolmao','shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'Idle', 24, false);
 				animation.addByPrefix('singUP', 'Up', 24, false);
