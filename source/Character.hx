@@ -468,7 +468,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, 80);
 				
 				case 'poyoandjamey':
-				r tex = Paths.getSparrowAtlas('shitbox/poyolmao','shared');
+				var tex = Paths.getSparrowAtlas('shitbox/poyolmao' ,'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'Idle', 16, false);
 				animation.addByPrefix('singUP', 'Up', 8, false);
