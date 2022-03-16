@@ -79,8 +79,8 @@ class Character extends FlxSprite
 				tex = Paths.getSparrowAtlas('shitbox/lookatemgo');
 				frames = tex;
 				
-				animation.addByIndices('danceLeft', 'Left', 24, false);
-				animation.addByIndices('danceRight', 'Right', 24, false);
+				animation.addByPrefix('danceLeft', 'Left', 24, false);
+				animation.addByPrefix('danceRight', 'Right', 24, false);
 				
 				addOffset('danceLeft', 0, -9);
 				addOffset('danceRight', 0, -9);
