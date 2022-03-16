@@ -73,6 +73,21 @@ class Character extends FlxSprite
 				addOffset('scared', -2, -17);
 
 				playAnim('danceRight');
+				
+			case 'gf-sonic':
+				// GIRLFRIEND CODE
+				tex = Paths.getSparrowAtlas('shitbox/lookatemgo');
+				frames = tex;
+				
+				animation.addByIndices('danceLeft', 'Left', 24, false);
+				animation.addByIndices('danceRight', 'Right', 24, false);
+				
+				addOffset('danceLeft', 0, -9);
+				addOffset('danceRight', 0, -9);
+
+				playAnim('danceRight');
+				
+				setGraphicSize(Std.int(width * 5));
 
 			case 'gf-christmas':
 				tex = Paths.getSparrowAtlas('christmas/gfChristmas');
@@ -923,6 +938,16 @@ class Character extends FlxSprite
 					}
 
 				case 'gf-car':
+					if (!animation.curAnim.name.startsWith('hair'))
+					{
+						danced = !danced;
+
+						if (danced)
+							playAnim('danceRight');
+						else
+							playAnim('danceLeft');
+					}
+				case 'gf-sonic':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
 						danced = !danced;

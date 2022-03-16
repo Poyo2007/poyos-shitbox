@@ -558,6 +558,50 @@ class PlayState extends MusicBeatState
 						cliffs.antialiasing = true;
 					    add(cliffs);
 			}
+			case 'deadly-obsession':
+			{
+					defaultCamZoom = 0.9;
+					curStage = 'tailsplace';
+					var backwall:FlxSprite = new FlxSprite(-200, -200).loadGraphic(Paths.image('mashedtails/wall'));
+					backwall.setGraphicSize(Std.int(backwall.width * 0.8));
+					backwall.antialiasing = true;
+					backwall.scrollFactor.set(0.9, 0.9);
+					backwall.active = false;
+
+					var desk:FlxSprite = new FlxSprite(-170, -100).loadGraphic(Paths.image('mashedtails/desk'));
+					desk.setGraphicSize(Std.int(desk.width * 0.7));
+					desk.updateHitbox();
+					desk.antialiasing = true;
+					desk.scrollFactor.set(0.9, 0.9);
+					desk.active = false;
+
+					var robot:FlxSprite = new FlxSprite(-170, -100).loadGraphic(Paths.image('mashedtails/robo'));
+					robot.setGraphicSize(Std.int(robot.width * 0.7));
+					robot.updateHitbox();
+					robot.antialiasing = true;
+					robot.scrollFactor.set(0.9, 0.9);
+					robot.active = false;
+					
+					var box:FlxSprite = new FlxSprite(-170, -100).loadGraphic(Paths.image('mashedtails/box'));
+					box.setGraphicSize(Std.int(box.width * 0.7));
+					box.updateHitbox();
+					box.antialiasing = true;
+					box.scrollFactor.set(0.9, 0.9);
+					box.active = false;
+					
+					var crate:FlxSprite = new FlxSprite(-170, -100).loadGraphic(Paths.image('mashedtails/crate'));
+					crate.setGraphicSize(Std.int(crate.width * 0.7));
+					crate.updateHitbox();
+					crate.antialiasing = true;
+					crate.scrollFactor.set(0.9, 0.9);
+					crate.active = false;
+					
+					add('backwall');
+        	add('box');
+        	add('robot');
+        	add('desk');
+        	add('crate');
+			}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -598,12 +642,13 @@ class PlayState extends MusicBeatState
 				gfVersion = 'gf-pixel';
 			case 'schoolEvil':
 				gfVersion = 'gf-pixel';
+			case 'tailsplace':
+				gfVersion = 'gf-sonic';
 		}
 
 		if (curStage == 'limo')
 			gfVersion = 'gf-car';
-
-		gf = new Character(400, 130, gfVersion);
+		gf = new Character(400, 100, gfVersion);
 		gf.scrollFactor.set(0.95, 0.95);
 
 		dad = new Character(100, 100, SONG.player2);
@@ -663,6 +708,15 @@ class PlayState extends MusicBeatState
 			  dad.y += 300;
 		}
     boyfriend = new Boyfriend(770, 100, SONG.player1);
+    
+    switch (gfVersion)
+		{
+			case "gf":
+				dad.y += 30;
+			case 'gf-sonic':
+			  dad.x += 150;
+			  dad.y += 250;
+		}
 		
 		switch (SONG.player1)
 		{

@@ -4,3 +4,4 @@ chaos:poyo:0
 you-cant-run:poyo:0
 Mild-mania:poyo:0
 No-Noobs:hank:0
+Deadly-Obsession:jamey:0
