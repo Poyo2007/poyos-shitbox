@@ -594,7 +594,7 @@ class PlayState extends MusicBeatState
 					crate.updateHitbox();
 					crate.antialiasing = true;
 					crate.scrollFactor.set(0.9, 0.9);
-					crate.active = false
+					crate.active = false;
 					
 					add(backwall);
         	add(box);
