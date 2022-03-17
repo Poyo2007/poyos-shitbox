@@ -594,13 +594,14 @@ class PlayState extends MusicBeatState
 					crate.updateHitbox();
 					crate.antialiasing = true;
 					crate.scrollFactor.set(0.9, 0.9);
-					crate.active = false;
+					crate.active = false
 					
 					add(backwall);
         	add(box);
         	add(robot);
         	add(desk);
         	add(crate);
+        	add(gf);
 			}
 			default:
 			{
@@ -705,7 +706,7 @@ class PlayState extends MusicBeatState
 			case 'bf':
 			  dad.y += 300;
 			case 'jamey':
-			  dad.y += 300;
+			  dad.y += 200;
 		}
     boyfriend = new Boyfriend(770, 100, SONG.player1);
     
